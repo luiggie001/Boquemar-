@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parador Boquemar | Boquerón, Puerto Rico</title>
-  <meta name="description" content="Hospédate en el corazón de Boquerón. Cerca de la playa, restaurantes, vida nocturna y atracciones de Cabo Rojo." />
+  <meta name="description" content="Hospédate en el corazón de Boquerón. Cerca de la playa, restaurantes y atracciones de Cabo Rojo." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <style>
     :root{
-      --navy:#102844;
-      --blue:#1f5f9e;
+      --navy:#0f2742;
+      --blue:#1f5f9d;
       --gold:#c79a31;
       --sand:#f6f2ea;
       --white:#ffffff;
@@ -49,9 +46,9 @@
     .btn:hover{transform:translateY(-1px)}
     .btn-primary{background:var(--gold);color:#fff}
     .btn-secondary{
-      background:rgba(255,255,255,.14);
+      background:rgba(255,255,255,.12);
       color:#fff;
-      border:1px solid rgba(255,255,255,.26);
+      border:1px solid rgba(255,255,255,.24);
       backdrop-filter:blur(8px);
     }
     .btn-dark{background:var(--navy);color:#fff}
@@ -61,12 +58,12 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(16,40,68,.86);
+      background:rgba(15,39,66,.84);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
     .nav-wrap{
-      min-height:86px;
+      min-height:84px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -77,8 +74,9 @@
       align-items:center;
     }
     .brand img{
-      height:64px;
+      height:62px;
       width:auto;
+      max-width:260px;
       object-fit:contain;
       background:#fff;
       padding:6px 10px;
@@ -99,8 +97,8 @@
       position:relative;
       color:#fff;
       background:
-        linear-gradient(rgba(7,19,33,.46), rgba(7,19,33,.7)),
-        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        linear-gradient(rgba(7,19,33,.42), rgba(7,19,33,.68)),
+        url('FACHADA_REAL.jpg') center/cover no-repeat;
       display:flex;
       align-items:center;
       overflow:hidden;
@@ -138,7 +136,7 @@
     }
     .hero p{
       max-width:620px;
-      color:rgba(255,255,255,.88);
+      color:rgba(255,255,255,.9);
       font-size:1.08rem;
       margin-bottom:28px;
     }
@@ -149,7 +147,7 @@
     }
 
     .booking-card{
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.93);
       color:var(--text);
       border-radius:28px;
       padding:22px;
@@ -209,8 +207,8 @@
       gap:18px;
     }
     .feature{
-      background:rgba(255,255,255,.9);
-      border:1px solid rgba(16,40,68,.08);
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,39,66,.08);
       border-radius:var(--radius);
       padding:24px;
       box-shadow:var(--shadow);
@@ -227,7 +225,7 @@
       background:#fff;
       border-radius:28px;
       overflow:hidden;
-      border:1px solid rgba(16,40,68,.08);
+      border:1px solid rgba(15,39,66,.08);
       box-shadow:var(--shadow);
     }
     .room img{
@@ -259,27 +257,20 @@
       gap:28px;
       align-items:center;
     }
-    .gallery{
+
+    .hotel-grid{
       display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns:1fr 1fr;
       gap:16px;
     }
-    .gallery-main,
-    .gallery-side > div{
-      overflow:hidden;
-      border-radius:28px;
-      box-shadow:var(--shadow);
-      min-height:240px;
-    }
-    .gallery-main img,
-    .gallery-side img{
+
+    .hotel-grid img{
       width:100%;
       height:100%;
+      min-height:220px;
       object-fit:cover;
-    }
-    .gallery-side{
-      display:grid;
-      gap:16px;
+      border-radius:24px;
+      box-shadow:var(--shadow);
     }
 
     .reviews{
@@ -288,10 +279,10 @@
       gap:18px;
     }
     .review{
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.92);
       border-radius:24px;
       padding:24px;
-      border:1px solid rgba(16,40,68,.08);
+      border:1px solid rgba(15,39,66,.08);
       box-shadow:var(--shadow);
     }
     .stars{color:var(--gold);margin-bottom:12px;letter-spacing:.08em}
@@ -303,7 +294,7 @@
       border-radius:28px;
       padding:28px;
       box-shadow:var(--shadow);
-      border:1px solid rgba(16,40,68,.08);
+      border:1px solid rgba(15,39,66,.08);
     }
     .location-list{
       list-style:none;
@@ -345,7 +336,7 @@
       justify-content:space-between;
       gap:18px;
       flex-wrap:wrap;
-      border-top:1px solid rgba(16,40,68,.10);
+      border-top:1px solid rgba(15,39,66,.10);
       padding-top:24px;
     }
 
@@ -355,11 +346,10 @@
       .features,
       .rooms,
       .split,
-      .gallery,
+      .hotel-grid,
       .reviews{
         grid-template-columns:1fr;
       }
-      .gallery-side{grid-template-columns:1fr 1fr}
       .hero{min-height:auto}
       .hero-grid{padding-top:54px}
     }
@@ -369,242 +359,221 @@
       .nav-wrap{min-height:76px}
       .brand img{height:54px;max-width:220px}
       .booking-grid{grid-template-columns:1fr}
-      .gallery-side{grid-template-columns:1fr}
       .footer-wrap{flex-direction:column;align-items:flex-start}
       .hero h1{font-size:2.6rem}
     }
-  </style>
-</head>
-<body>
-
-  <header>
+  </style></head>
+<body>  <header>
     <div class="container nav-wrap">
       <a href="#top" class="brand">
         <img src="Screenshot_20260420_143401_Chrome.jpg" alt="Parador Boquemar logo">
-      </a>
+      </a>  <nav>
+    <a href="#habitaciones">Habitaciones</a>
+    <a href="#hotel">El hotel</a>
+    <a href="#resenas">Reseñas</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#reservar" class="btn btn-primary">Reservar</a>
+  </nav>
+</div>
 
-      <nav>
-        <a href="#habitaciones">Habitaciones</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#resenas">Reseñas</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="#reservar" class="btn btn-primary">Reservar</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
+  </header>  <main id="top">
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Boquerón, Cabo Rojo · Puerto Rico</div>
-          <h1>Hospédate en el corazón de Boquerón</h1>
-          <p>Disfruta una estadía cerca de la playa, restaurantes, vida nocturna y atracciones locales en uno de los destinos más visitados del suroeste de Puerto Rico.</p>
+          <h1>Parador Boquemar</h1>
+          <p>Hospédate en una ubicación privilegiada cerca de la playa, restaurantes y el ambiente único de Boquerón, con una presentación mucho más moderna y premium.</p>
           <div class="hero-actions">
             <a href="#reservar" class="btn btn-primary">Ver disponibilidad</a>
             <a href="#habitaciones" class="btn btn-secondary">Ver habitaciones</a>
           </div>
+        </div>    <aside class="booking-card" id="reservar">
+      <h3>Reserva rápida</h3>
+      <div class="booking-grid">
+        <div class="field">
+          <small>Entrada</small>
+          <strong>Selecciona fecha</strong>
         </div>
+        <div class="field">
+          <small>Salida</small>
+          <strong>Selecciona fecha</strong>
+        </div>
+        <div class="field">
+          <small>Huéspedes</small>
+          <strong>2 adultos</strong>
+        </div>
+        <div class="field">
+          <small>Mejor tarifa</small>
+          <strong>Reserva directa</strong>
+        </div>
+      </div>
 
-        <aside class="booking-card" id="reservar">
-          <h3>Reserva rápida</h3>
-          <div class="booking-grid">
-            <div class="field">
-              <small>Entrada</small>
-              <strong>Selecciona fecha</strong>
-            </div>
-            <div class="field">
-              <small>Salida</small>
-              <strong>Selecciona fecha</strong>
-            </div>
-            <div class="field">
-              <small>Huéspedes</small>
-              <strong>2 adultos</strong>
-            </div>
-            <div class="field">
-              <small>Mejor tarifa</small>
-              <strong>Reserva directa</strong>
-            </div>
+      <div style="margin-top:14px;display:grid;gap:10px;">
+        <a href="#" class="btn btn-dark">Reservar ahora</a>
+        <a href="#habitaciones" class="btn" style="background:#eef3f8;color:var(--navy);">Explorar habitaciones</a>
+      </div>
+
+      <div class="note">Cuando quieras, reemplazamos este botón por el enlace real de reservas.</div>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Por qué quedarse en Boquemar</h2>
+    <p class="section-subtitle">Ahora sí, con una base más real del hotel: fachada, habitaciones auténticas y una presentación mucho más limpia que la página vieja.</p>
+
+    <div class="features">
+      <article class="feature">
+        <h3>Cerca de la playa</h3>
+        <p>Perfecto para disfrutar Boquerón con menos vueltas y más tiempo en el área costera.</p>
+      </article>
+      <article class="feature">
+        <h3>Ubicación conveniente</h3>
+        <p>Cerca del poblado, restaurantes, ambiente local y otros puntos importantes de Cabo Rojo.</p>
+      </article>
+      <article class="feature">
+        <h3>Habitaciones reales</h3>
+        <p>La nueva página ya puede enseñar mejor el producto real del hotel sin parecer vieja ni sobrecargada.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="habitaciones" style="padding-top:24px;">
+  <div class="container">
+    <h2 class="section-title">Habitaciones</h2>
+    <p class="section-subtitle">Fotos reales del hotel con una presentación más premium y clara para que el cliente entienda mejor lo que va a reservar.</p>
+
+    <div class="rooms">
+      <article class="room">
+        <img src="HABITACION_REAL_1.jpg" alt="Habitación estándar">
+        <div class="room-content">
+          <h3>Habitación Standard</h3>
+          <p>Opción cómoda y práctica para escapadas y estadías cerca del corazón de Boquerón.</p>
+          <div class="tags">
+            <span class="tag">Cómoda</span>
+            <span class="tag">A/C</span>
+            <span class="tag">Wi-Fi</span>
           </div>
+          <a href="#reservar" class="btn btn-dark">Reservar</a>
+        </div>
+      </article>
 
-          <div style="margin-top:14px;display:grid;gap:10px;">
-            <a href="#" class="btn btn-dark">Reservar ahora</a>
-            <a href="#habitaciones" class="btn" style="background:#eef3f8;color:var(--navy);">Explorar habitaciones</a>
+      <article class="room">
+        <img src="HABITACION_REAL_2.jpg" alt="Habitación deluxe">
+        <div class="room-content">
+          <h3>Habitación Deluxe</h3>
+          <p>Más espacio, mejor presencia y una presentación más atractiva para reservas directas.</p>
+          <div class="tags">
+            <span class="tag">Más espacio</span>
+            <span class="tag">Privada</span>
+            <span class="tag">Premium</span>
           </div>
-
-          <div class="note">Luego reemplazamos este botón por el enlace real de reservas o el motor que usen.</div>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2 class="section-title">Por qué quedarse en Boquemar</h2>
-        <p class="section-subtitle">Ubicación, cercanía a la playa, ambiente local y una estadía cómoda. La página debe vender todo eso en segundos.</p>
-
-        <div class="features">
-          <article class="feature">
-            <h3>Cerca de la playa</h3>
-            <p>Perfecto para disfrutar Boquerón y moverse poco, que es exactamente lo que la gente quiere en esa zona.</p>
-          </article>
-          <article class="feature">
-            <h3>Todo cerca</h3>
-            <p>Restaurantes, paseo tablado, ambiente local y vida nocturna a pocos minutos del hotel.</p>
-          </article>
-          <article class="feature">
-            <h3>Ambiente relajado</h3>
-            <p>Una estadía práctica y cómoda para escapadas, fines de semana y vacaciones en Cabo Rojo.</p>
-          </article>
+          <a href="#reservar" class="btn btn-dark">Ver disponibilidad</a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section id="habitaciones" style="padding-top:24px;">
-      <div class="container">
-        <h2 class="section-title">Habitaciones</h2>
-        <p class="section-subtitle">Esta estructura ya queda lista para luego sustituir las imágenes por fotos reales del hotel sin volver a rehacer la página.</p>
-
-        <div class="rooms">
-          <article class="room">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Habitación estándar">
-            <div class="room-content">
-              <h3>Habitación Standard</h3>
-              <p>Una opción cómoda y práctica para descansar luego de un día de playa y paseo por Boquerón.</p>
-              <div class="tags">
-                <span class="tag">A/C</span>
-                <span class="tag">Wi-Fi</span>
-                <span class="tag">Cómoda</span>
-              </div>
-              <a href="#reservar" class="btn btn-dark">Reservar</a>
-            </div>
-          </article>
-
-          <article class="room">
-            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" alt="Habitación doble">
-            <div class="room-content">
-              <h3>Habitación Doble</h3>
-              <p>Ideal para quienes quieren más espacio y una estadía cómoda cerca del corazón de Boquerón.</p>
-              <div class="tags">
-                <span class="tag">2 camas</span>
-                <span class="tag">Espaciosa</span>
-                <span class="tag">TV</span>
-              </div>
-              <a href="#reservar" class="btn btn-dark">Ver disponibilidad</a>
-            </div>
-          </article>
-
-          <article class="room">
-            <img src="https://images.unsplash.com/photo-1560448075-bb4caa6eeb4d?auto=format&fit=crop&w=900&q=80" alt="Suite">
-            <div class="room-content">
-              <h3>Suite</h3>
-              <p>Una opción más premium para huéspedes que quieren una experiencia más completa y relajada.</p>
-              <div class="tags">
-                <span class="tag">Premium</span>
-                <span class="tag">Privada</span>
-                <span class="tag">Mejor opción</span>
-              </div>
-              <a href="#reservar" class="btn btn-dark">Reservar ahora</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experiencia">
-      <div class="container split">
-        <div>
-          <h2 class="section-title">Disfruta Boquerón y Cabo Rojo</h2>
-          <p class="section-subtitle">Playa, gastronomía, ambiente local y acceso a otras atracciones del área. La página debe hacer sentir esa experiencia desde el primer vistazo.</p>
-          <p style="color:var(--muted);margin-bottom:18px;">Después te ayudo a sustituir estas imágenes por fotos reales del hotel, piscina, habitaciones o áreas comunes si quieres dejarla todavía más aterrizada.</p>
-          <a href="#resenas" class="btn btn-dark">Ver reseñas</a>
-        </div>
-
-        <div class="gallery">
-          <div class="gallery-main">
-            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80" alt="Playa">
+      <article class="room">
+        <img src="FACHADA_REAL.jpg" alt="Exterior del hotel">
+        <div class="room-content">
+          <h3>Boquemar real</h3>
+          <p>Una mejor primera impresión del hotel con imagen real de la propiedad y una estructura más fuerte.</p>
+          <div class="tags">
+            <span class="tag">Boquerón</span>
+            <span class="tag">Cabo Rojo</span>
+            <span class="tag">Ubicación</span>
           </div>
-          <div class="gallery-side">
-            <div>
-              <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=80" alt="Ambiente local">
-            </div>
-            <div>
-              <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210c0?auto=format&fit=crop&w=900&q=80" alt="Relajación">
-            </div>
-          </div>
+          <a href="#ubicacion" class="btn btn-dark">Ver ubicación</a>
         </div>
-      </div>
-    </section>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section id="resenas" style="padding-top:18px;">
-      <div class="container">
-        <h2 class="section-title">Una página que inspire confianza</h2>
-        <p class="section-subtitle">Las reseñas reales se pueden añadir luego, pero esta sección ya mejora mucho la credibilidad visual del sitio.</p>
+<section id="hotel">
+  <div class="container split">
+    <div>
+      <h2 class="section-title">El hotel, mejor presentado</h2>
+      <p class="section-subtitle">La idea no es inventar lujo falso. Es presentar mejor lo que el hotel sí tiene, con mejor jerarquía visual, mejor estructura y un look más actual.</p>
+      <p style="color:var(--muted);margin-bottom:18px;">Después puedes seguir subiendo más fotos reales de piscina, áreas comunes o lobby y esta misma base queda lista para crecer sin rehacer todo otra vez.</p>
+      <a href="#resenas" class="btn btn-dark">Ver reseñas</a>
+    </div>
 
-        <div class="reviews">
-          <article class="review">
-            <div class="stars">★★★★★</div>
-            <p>Excelente ubicación para disfrutar Boquerón, la playa y el ambiente del área.</p>
-            <strong>Hu&eacute;sped</strong>
-          </article>
-          <article class="review">
-            <div class="stars">★★★★★</div>
-            <p>Una estadía cómoda, bien ubicada y perfecta para relajarse en Cabo Rojo.</p>
-            <strong>Hu&eacute;sped</strong>
-          </article>
-          <article class="review">
-            <div class="stars">★★★★★</div>
-            <p>Ideal para escapadas de fin de semana y vacaciones cerca de todo.</p>
-            <strong>Hu&eacute;sped</strong>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="hotel-grid">
+      <img src="FACHADA_REAL.jpg" alt="Fachada del hotel">
+      <img src="HABITACION_REAL_1.jpg" alt="Habitación real">
+    </div>
+  </div>
+</section>
 
-    <section id="ubicacion">
-      <div class="container split">
-        <div class="location-card">
-          <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem);">Ubicación estratégica</h2>
-          <p class="section-subtitle" style="margin-bottom:0;">Boquemar debe sentirse como una base cómoda para disfrutar Boquerón y otras atracciones de Cabo Rojo.</p>
-          <ul class="location-list">
-            <li>Cerca de la playa y del poblado de Boquerón</li>
-            <li>Acceso rápido a restaurantes y vida nocturna</li>
-            <li>Buena ubicación para explorar Cabo Rojo</li>
-          </ul>
-        </div>
+<section id="resenas" style="padding-top:18px;">
+  <div class="container">
+    <h2 class="section-title">Una página que inspire confianza</h2>
+    <p class="section-subtitle">Aunque luego quieras añadir reseñas reales, esta estructura ya ayuda mucho a que el sitio se sienta más serio y más listo para vender.</p>
 
-        <div class="location-card" style="padding:0;overflow:hidden;min-height:340px;">
-          <iframe
-            title="Mapa de Boquerón"
-            src="https://www.google.com/maps?q=Boquer%C3%B3n%20Cabo%20Rojo%20Puerto%20Rico&z=14&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;min-height:340px;"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
+    <div class="reviews">
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <p>Excelente ubicación para disfrutar Boquerón, la playa y el ambiente del área.</p>
+        <strong>Hu&eacute;sped</strong>
+      </article>
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <p>Una estadía cómoda, bien ubicada y perfecta para relajarse en Cabo Rojo.</p>
+        <strong>Hu&eacute;sped</strong>
+      </article>
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <p>Ideal para escapadas de fin de semana y vacaciones cerca de todo.</p>
+        <strong>Hu&eacute;sped</strong>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section style="padding-top:12px;">
-      <div class="container">
-        <div class="cta">
-          <h2>Reserva tu estadía en Boquerón</h2>
-          <p>La estructura ya está lista. Lo próximo es conectar el botón de reservas y después el dominio boquemar.com.</p>
-          <a href="#reservar" class="btn btn-light">Reservar ahora</a>
-        </div>
-      </div>
-    </section>
-  </main>
+<section id="ubicacion">
+  <div class="container split">
+    <div class="location-card">
+      <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem);">Ubicación estratégica</h2>
+      <p class="section-subtitle" style="margin-bottom:0;">Boquemar se ve mucho más fuerte cuando la ubicación se presenta como una ventaja clara desde el primer vistazo.</p>
+      <ul class="location-list">
+        <li>Cerca de la playa y del poblado de Boquerón</li>
+        <li>Acceso rápido a restaurantes y vida nocturna</li>
+        <li>Buena base para explorar Cabo Rojo</li>
+      </ul>
+    </div>
 
-  <footer>
+    <div class="location-card" style="padding:0;overflow:hidden;min-height:340px;">
+      <iframe
+        title="Mapa de Boquerón"
+        src="https://www.google.com/maps?q=Boquer%C3%B3n%20Cabo%20Rojo%20Puerto%20Rico&z=14&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;min-height:340px;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:12px;">
+  <div class="container">
+    <div class="cta">
+      <h2>Reserva tu estadía en Boquerón</h2>
+      <p>Ya la base se ve mucho más real y mucho más premium. Lo próximo será conectar el botón o seguir añadiendo fotos reales del hotel.</p>
+      <a href="#reservar" class="btn btn-light">Reservar ahora</a>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
     <div class="container footer-wrap">
       <div>
         <strong style="color:var(--navy);">Parador Boquemar</strong><br>
-        Road 101, Poblado Boquerón, Cabo Rojo, Puerto Rico
+        Boquerón, Cabo Rojo, Puerto Rico
       </div>
       <div>© 2026 Parador Boquemar. Todos los derechos reservados.</div>
     </div>
-  </footer>
-
-</body>
+  </footer></body>
 </html>

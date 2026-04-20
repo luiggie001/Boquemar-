@@ -3,13 +3,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parador Boquemar | Boquerón, Puerto Rico</title>
-  <meta name="description" content="Hospédate en el corazón de Boquerón. Habitaciones cómodas, piscina y excelente ubicación cerca de la playa, restaurantes y atracciones de Cabo Rojo." />
+  <meta name="description" content="Hospédate en el corazón de Boquerón. Habitaciones cómodas, piscina, Wi-Fi y excelente ubicación cerca de la playa, restaurantes y atracciones de Cabo Rojo." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <style>
     :root{
       --navy:#0e2741;
-      --blue:#1e5d99;
+      --blue:#1f5f9d;
       --gold:#c79a31;
       --sand:#f6f2ea;
       --white:#ffffff;
@@ -237,6 +237,36 @@
       color:var(--muted);
     }
 
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .info-card{
+      background:#fff;
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(14,39,65,.08);
+    }
+    .info-card .label{
+      display:block;
+      color:var(--muted);
+      font-size:.82rem;
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+    .info-card strong{
+      color:var(--navy);
+      font-size:1rem;
+    }
+    .info-card p{
+      color:var(--muted);
+      font-size:.95rem;
+      margin-top:8px;
+    }
+
     .amenities{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -361,31 +391,6 @@
       transform:translateY(-4px);
     }
 
-    .reviews{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-    .review{
-      background:rgba(255,255,255,.92);
-      border-radius:24px;
-      padding:24px;
-      border:1px solid rgba(14,39,65,.08);
-      box-shadow:var(--shadow);
-    }
-    .stars{
-      color:var(--gold);
-      margin-bottom:12px;
-      letter-spacing:.08em;
-    }
-    .review p{
-      color:var(--muted);
-      margin-bottom:16px;
-    }
-    .review strong{
-      color:var(--navy);
-    }
-
     .location-card{
       background:#fff;
       border-radius:28px;
@@ -403,6 +408,26 @@
       background:#f3f7fb;
       padding:14px 16px;
       border-radius:16px;
+      color:var(--muted);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .contact-card{
+      background:#fff;
+      border-radius:22px;
+      padding:22px;
+      border:1px solid rgba(14,39,65,.08);
+      box-shadow:var(--shadow);
+    }
+    .contact-card h3{
+      color:var(--navy);
+      margin-bottom:10px;
+    }
+    .contact-card p{
       color:var(--muted);
     }
 
@@ -441,11 +466,12 @@
       nav{display:none}
       .hero-grid,
       .features,
+      .info-grid,
       .amenities,
       .rooms,
       .split,
       .hotel-grid,
-      .reviews{
+      .contact-grid{
         grid-template-columns:1fr;
       }
       .hero{min-height:auto}
@@ -467,10 +493,11 @@
         <img src="Screenshot_20260420_143401_Chrome.jpg" alt="Parador Boquemar logo">
       </a>  <nav>
     <a href="#por-que">Por qué Boquemar</a>
+    <a href="#hotel-info">Hotel</a>
     <a href="#amenidades">Amenidades</a>
     <a href="#habitaciones">Habitaciones</a>
-    <a href="#hotel">El hotel</a>
     <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Contacto</a>
     <a href="#reservar" class="btn btn-primary">Reservar</a>
   </nav>
 </div>
@@ -541,7 +568,40 @@
   </div>
 </section>
 
-<section id="amenidades" style="padding-top:24px;">
+<section id="hotel-info" style="padding-top:24px;">
+  <div class="container">
+    <h2 class="section-title">Información del hotel</h2>
+    <p class="section-subtitle">Lo esencial del hotel, presentado claro y rápido para que el huésped entienda qué ofrece Boquemar desde el primer vistazo.</p>
+
+    <div class="info-grid">
+      <article class="info-card">
+        <span class="label">Capacidad</span>
+        <strong>75 habitaciones</strong>
+        <p>Acomodos para 2 a 4 personas según la habitación.</p>
+      </article>
+
+      <article class="info-card">
+        <span class="label">Comodidad</span>
+        <strong>A/C · Wi-Fi · Mini nevera</strong>
+        <p>Servicios básicos clave para una estadía más cómoda.</p>
+      </article>
+
+      <article class="info-card">
+        <span class="label">Piscina</span>
+        <strong>Adultos y niños</strong>
+        <p>Espacios para relajarse durante la estadía.</p>
+      </article>
+
+      <article class="info-card">
+        <span class="label">Servicio</span>
+        <strong>Recepción 24 horas</strong>
+        <p>Más conveniencia para entrada, salida y orientación.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="amenidades">
   <div class="container">
     <h2 class="section-title">Amenidades</h2>
     <p class="section-subtitle">Esta parte ayuda a que el cliente entienda rápido lo esencial del hotel sin tener que adivinarlo.</p>
@@ -656,40 +716,14 @@
   </div>
 </section>
 
-<section id="resenas" style="padding-top:18px;">
-  <div class="container">
-    <h2 class="section-title">Una página que inspire confianza</h2>
-    <p class="section-subtitle">Aunque luego quieras meter reseñas reales, esta estructura ya hace que el sitio se sienta mucho más serio y más listo para vender.</p>
-
-    <div class="reviews">
-      <article class="review">
-        <div class="stars">★★★★★</div>
-        <p>Excelente ubicación para disfrutar Boquerón, la playa y el ambiente del área.</p>
-        <strong>Hu&eacute;sped</strong>
-      </article>
-
-      <article class="review">
-        <div class="stars">★★★★★</div>
-        <p>Una estadía cómoda, bien ubicada y perfecta para relajarse en Cabo Rojo.</p>
-        <strong>Hu&eacute;sped</strong>
-      </article>
-
-      <article class="review">
-        <div class="stars">★★★★★</div>
-        <p>Ideal para escapadas de fin de semana y vacaciones cerca de todo.</p>
-        <strong>Hu&eacute;sped</strong>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section id="ubicacion">
   <div class="container split">
     <div class="location-card">
       <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem);">Ubicación estratégica</h2>
       <p class="section-subtitle" style="margin-bottom:0;">Boquemar se ve mucho más fuerte cuando la ubicación se presenta como una ventaja clara desde el inicio.</p>
       <ul class="location-list">
-        <li>Cerca de la playa y del poblado de Boquerón</li>
+        <li>A pasos del poblado de Boquerón</li>
+        <li>Cerca del Balneario de Boquerón</li>
         <li>Acceso rápido a restaurantes y vida nocturna</li>
         <li>Buena base para explorar Cabo Rojo</li>
       </ul>
@@ -698,7 +732,7 @@
     <div class="location-card" style="padding:0;overflow:hidden;min-height:340px;">
       <iframe
         title="Mapa de Boquerón"
-        src="https://www.google.com/maps?q=Boquer%C3%B3n%20Cabo%20Rojo%20Puerto%20Rico&z=14&output=embed"
+        src="https://www.google.com/maps?q=Carretera%20101%20Poblado%20Boquer%C3%B3n%20Cabo%20Rojo%20Puerto%20Rico&z=14&output=embed"
         width="100%"
         height="100%"
         style="border:0;min-height:340px;"
@@ -708,11 +742,35 @@
   </div>
 </section>
 
+<section id="contacto">
+  <div class="container">
+    <h2 class="section-title">Contacto</h2>
+    <p class="section-subtitle">Información útil para que el huésped se ubique rápido y pueda comunicarse con el hotel.</p>
+
+    <div class="contact-grid">
+      <article class="contact-card">
+        <h3>Dirección</h3>
+        <p>Carretera 101, Poblado Boquerón, Cabo Rojo, Puerto Rico 00622</p>
+      </article>
+
+      <article class="contact-card">
+        <h3>Teléfonos</h3>
+        <p>787.851.0591<br>787.851.2158</p>
+      </article>
+
+      <article class="contact-card">
+        <h3>Horario y servicios</h3>
+        <p>Recepción 24 horas, estacionamiento gratis y áreas comunes para una estadía más cómoda.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section style="padding-top:12px;">
   <div class="container">
     <div class="cta">
       <h2>Reserva tu estadía en Boquerón</h2>
-      <p>Ya la base se ve más completa, más premium y con mejor información real. Cuando quieras, el próximo paso es conectar el enlace real de reservas.</p>
+      <p>Ya la página se ve completa, premium y con mejor información real del hotel. Cuando quieras, el próximo paso es conectar el enlace real de reservas.</p>
       <a href="#reservar" class="btn btn-light">Reservar ahora</a>
     </div>
   </div>
@@ -722,7 +780,7 @@
     <div class="container footer-wrap">
       <div>
         <strong style="color:var(--navy);">Parador Boquemar</strong><br>
-        Boquerón, Cabo Rojo, Puerto Rico
+        Carretera 101, Poblado Boquerón, Cabo Rojo, Puerto Rico 00622
       </div>
       <div>© 2026 Parador Boquemar. Todos los derechos reservados.</div>
     </div>

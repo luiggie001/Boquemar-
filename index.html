@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parador Boquemar | Boquerón, PR</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: #111;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav h1 {
+  font-size: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #0077ff;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: black;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+</style></head><body><nav>
+  <h1>Boquemar</h1>
+  <a href="#">Reserve</a>
+</nav><section class="hero">
+  <div class="hero-content">
+    <h2>Stay in the heart of Boquerón</h2>
+    <p>Steps from the beach. Relax, unwind, enjoy.</p>
+    <button class="btn btn-primary">Reserve Now</button>
+    <button class="btn btn-secondary">Check Availability</button>
+  </div>
+</section><section>
+  <h2>Experience Boquerón</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+      <h3>Beach Access</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98">
+      <h3>Nightlife</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210c0">
+      <h3>Relax & Enjoy</h3>
+    </div>
+  </div>
+</section><section>
+  <h2>Rooms</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+      <h3>Standard Room</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+      <h3>Double Room</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1560448075-bb4caa6eeb4d">
+      <h3>Suite</h3>
+    </div>
+  </div>
+</section><section>
+  <h2>Book Your Stay</h2>
+  <p>Enjoy your vacation in beautiful Cabo Rojo, Puerto Rico.</p>
+  <button class="btn btn-primary">Reserve Now</button>
+</section><footer>
+  <p>© 2026 Parador Boquemar | Boquerón, Puerto Rico</p>
+</footer></body>
+</html>

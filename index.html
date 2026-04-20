@@ -2,746 +2,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parador Boquemar | Boquerón, Puerto Rico</title>
-  <meta name="description" content="Hospédate en Parador Boquemar, en el corazón de Boquerón. Habitaciones cómodas, piscina y excelente ubicación cerca de la playa, restaurantes y la vida nocturna." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <style>
-    :root{
-      --navy:#0e2741;
-      --blue:#1f5f9d;
-      --gold:#c79a31;
-      --sand:#f6f2ea;
-      --white:#ffffff;
-      --text:#1f2937;
-      --muted:#667085;
-      --soft:#eef4fa;
-      --shadow:0 18px 45px rgba(10,25,45,.12);
-      --shadow-strong:0 28px 60px rgba(10,25,45,.16);
-      --radius:24px;
-      --max:1200px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:"Inter",sans-serif;
-      color:var(--text);
-      background:var(--sand);
-      line-height:1.5;
-    }
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 24px;
-      border-radius:999px;
-      font-weight:700;
-      border:none;
-      cursor:pointer;
-      transition:.25s ease;
-    }
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{
-      background:linear-gradient(135deg,#d4aa42,#b9851d);
-      color:#fff;
-      box-shadow:0 12px 24px rgba(185,133,29,.28);
-    }
-    .btn-dark{
-      background:linear-gradient(135deg,#102844,#1b446f);
-      color:#fff;
-      box-shadow:0 12px 24px rgba(16,40,68,.20);
-    }
-    .btn-light{
-      background:#fff;
-      color:var(--navy);
-    }
-    .btn-secondary{
-      background:rgba(255,255,255,.12);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.24);
-      backdrop-filter:blur(8px);
-    }
+  <title>Parador Boquemar | Boquerón, Puerto Rico</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">  <style>
+    body{font-family:Inter,sans-serif;margin:0;background:#f6f2ea;color:#1f2937}
+    img{width:100%;display:block}
+    .container{width:90%;max-width:1100px;margin:auto}
 
     header{
-      position:sticky;
-      top:0;
+      position:sticky;top:0;
+      background:#0e2741;
+      padding:10px 0;
       z-index:1000;
-      background:rgba(14,39,65,.86);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.08);
     }
-    .nav-wrap{
-      min-height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-    }
-    .brand img{
-      height:52px;
-      width:auto;
-      max-width:230px;
-      object-fit:contain;
-      background:rgba(255,255,255,.96);
-      padding:6px 10px;
-      border-radius:16px;
-      box-shadow:0 10px 24px rgba(0,0,0,.14);
-    }
-    nav{
-      display:flex;
-      align-items:center;
-      gap:22px;
-      color:rgba(255,255,255,.92);
-      font-size:.95rem;
-    }
-    nav a:hover{color:#fff}
+
+    header img{height:50px;background:#fff;padding:5px;border-radius:10px}
 
     .hero{
-      min-height:96vh;
-      position:relative;
+      background:url('Screenshot_20260420_160516_Chrome.jpg') center/cover no-repeat;
       color:#fff;
-      background:
-        linear-gradient(rgba(5,16,28,.18), rgba(5,16,28,.60)),
-        url('Screenshot_20260420_160516_Chrome.jpg') center center/cover no-repeat;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      left:0;right:0;bottom:0;
-      height:140px;
-      background:linear-gradient(180deg, rgba(246,242,234,0) 0%, var(--sand) 100%);
-    }
-    .hero-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:34px;
-      align-items:end;
-      padding:88px 0 120px;
-    }
-    .eyebrow{
-      display:inline-flex;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.1);
-      border:1px solid rgba(255,255,255,.18);
-      font-size:.9rem;
-      margin-bottom:18px;
-    }
-    .hero h1{
-      font-size:clamp(3.1rem, 6vw, 6.2rem);
-      line-height:.93;
-      margin-bottom:18px;
-      max-width:760px;
-      letter-spacing:-0.03em;
-      text-shadow:0 10px 30px rgba(0,0,0,.22);
-    }
-    .hero p{
-      max-width:640px;
-      color:rgba(255,255,255,.94);
-      font-size:1.12rem;
-      margin-bottom:30px;
-      text-shadow:0 6px 18px rgba(0,0,0,.18);
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-    }
-
-    .booking-card{
-      background:rgba(255,255,255,.94);
-      color:var(--text);
-      border-radius:30px;
-      padding:24px;
-      box-shadow:0 26px 60px rgba(7,19,33,.18);
-      border:1px solid rgba(255,255,255,.6);
-      backdrop-filter:blur(14px);
-    }
-    .booking-card h3{
-      color:var(--navy);
-      margin-bottom:14px;
-      font-size:1.1rem;
-    }
-    .booking-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-    .field{
-      background:#fff;
-      border:1px solid #dde5ec;
-      border-radius:18px;
-      padding:12px 14px;
-    }
-    .field small{
-      display:block;
-      color:var(--muted);
-      font-size:.8rem;
-      margin-bottom:4px;
-    }
-    .field strong{
-      color:var(--navy);
-      font-size:.95rem;
-    }
-    .note{
-      margin-top:12px;
-      color:var(--muted);
-      font-size:.84rem;
-    }
-
-    section{padding:86px 0}
-    .section-title{
-      font-size:clamp(2rem, 3vw, 3rem);
-      line-height:1.05;
-      color:var(--navy);
-      margin-bottom:14px;
-    }
-    .section-subtitle{
-      max-width:760px;
-      color:var(--muted);
-      font-size:1.04rem;
-      margin-bottom:34px;
-    }
-
-    .experience{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-    .experience-card{
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(14,39,65,.08);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:var(--shadow);
-    }
-    .experience-card h3{
-      color:var(--navy);
-      margin-bottom:10px;
-    }
-    .experience-card p{
-      color:var(--muted);
-    }
-
-    .amenities{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-    .amenity{
-      background:#fff;
-      border-radius:22px;
-      padding:22px;
+      padding:100px 20px;
       text-align:center;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(14,39,65,.08);
-    }
-    .amenity .icon{
-      width:54px;
-      height:54px;
-      margin:0 auto 14px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:var(--soft);
-      color:var(--navy);
-      font-size:1.35rem;
-      font-weight:800;
-    }
-    .amenity h3{
-      color:var(--navy);
-      font-size:1rem;
-      margin-bottom:8px;
-    }
-    .amenity p{
-      color:var(--muted);
-      font-size:.95rem;
     }
 
-    .rooms{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:22px;
-    }
+    h1{font-size:2.5rem;margin-bottom:10px}
+    h2{color:#0e2741}
+
+    section{padding:50px 0}
+
+    .rooms{display:grid;gap:20px}
+
     .room{
       background:#fff;
-      border-radius:30px;
+      border-radius:20px;
       overflow:hidden;
-      border:1px solid rgba(14,39,65,.08);
-      box-shadow:0 20px 45px rgba(10,25,45,.10);
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .room:hover{
-      transform:translateY(-6px);
-      box-shadow:var(--shadow-strong);
-    }
-    .room img{
-      width:100%;
-      aspect-ratio:4/3;
-      object-fit:cover;
-      filter:contrast(1.08) saturate(1.12) brightness(1.03);
-      transition:transform .35s ease, filter .35s ease;
-    }
-    .room:hover img{
-      transform:scale(1.03);
-      filter:contrast(1.1) saturate(1.16) brightness(1.05);
-    }
-    .room-content{
-      padding:22px;
-    }
-    .room-content h3{
-      color:var(--navy);
-      margin-bottom:8px;
-    }
-    .room-content p{
-      color:var(--muted);
-      margin-bottom:14px;
-    }
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:14px;
-    }
-    .tag{
-      padding:7px 10px;
-      background:var(--soft);
-      color:var(--blue);
-      border-radius:999px;
-      font-size:.83rem;
-      font-weight:700;
-    }
-    .room-details{
-      list-style:none;
-      display:grid;
-      gap:8px;
-      margin:0 0 18px 0;
-    }
-    .room-details li{
-      color:var(--muted);
-      font-size:.94rem;
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+      position:relative;
     }
 
-    .split{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-      align-items:center;
-    }
-    .hotel-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-    .hotel-grid img{
-      width:100%;
-      height:100%;
-      min-height:240px;
-      object-fit:cover;
-      border-radius:26px;
-      box-shadow:0 20px 45px rgba(10,25,45,.12);
-      filter:contrast(1.05) saturate(1.08) brightness(1.02);
-      transition:transform .3s ease;
-    }
-    .hotel-grid img:hover{
-      transform:translateY(-4px);
+    .room.featured{
+      border:2px solid #c79a31;
+      box-shadow:0 20px 40px rgba(199,154,49,.3);
     }
 
-    .location-card{
-      background:#fff;
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(14,39,65,.08);
-    }
-    .location-list{
-      list-style:none;
-      display:grid;
-      gap:10px;
-      margin-top:18px;
-    }
-    .location-list li{
-      background:#f3f7fb;
-      padding:14px 16px;
-      border-radius:16px;
-      color:var(--muted);
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-    .contact-card{
-      background:#fff;
-      border-radius:22px;
-      padding:22px;
-      border:1px solid rgba(14,39,65,.08);
-      box-shadow:var(--shadow);
-    }
-    .contact-card h3{
-      color:var(--navy);
-      margin-bottom:10px;
-    }
-    .contact-card p{
-      color:var(--muted);
-    }
-
-    .cta{
-      text-align:center;
-      background:linear-gradient(135deg,#0f2742, #1d5c93);
+    .room.featured::before{
+      content:"Recomendada";
+      position:absolute;
+      top:10px;left:10px;
+      background:#c79a31;
       color:#fff;
-      padding:64px 24px;
-      border-radius:36px;
-      box-shadow:0 28px 60px rgba(10,25,45,.16);
-    }
-    .cta h2{
-      font-size:clamp(2rem,3vw,3.2rem);
-      margin-bottom:12px;
-    }
-    .cta p{
-      color:rgba(255,255,255,.84);
-      margin-bottom:24px;
+      font-size:12px;
+      padding:5px 10px;
+      border-radius:20px;
     }
 
-    footer{
-      padding:34px 0 48px;
-      color:var(--muted);
-    }
-    .footer-wrap{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
-      border-top:1px solid rgba(14,39,65,.10);
-      padding-top:24px;
+    .room-content{padding:20px}
+
+    .tag{
+      background:#eef4fa;
+      padding:5px 10px;
+      border-radius:20px;
+      margin:3px;
+      display:inline-block;
+      font-size:12px;
     }
 
-    @media (max-width:1180px){
-      .rooms{grid-template-columns:repeat(2,1fr)}
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:12px 20px;
+      background:#0e2741;
+      color:#fff;
+      border-radius:30px;
     }
 
-    @media (max-width:980px){
-      nav{display:none}
-      .hero-grid,
-      .experience,
-      .amenities,
-      .split,
-      .hotel-grid,
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-      .hero{min-height:auto}
-      .hero-grid{padding-top:54px}
-    }
+    footer{padding:30px;text-align:center;color:#666}
+  </style></head><body><header>
+  <div class="container">
+    <img src="Screenshot_20260420_143401_Chrome.jpg">
+  </div>
+</header><section class="hero">
+  <h1>Tu estadía en Boquerón</h1>
+  <p>Cómodo, bien ubicado y listo para disfrutar Cabo Rojo</p>
+</section><section>
+  <div class="container"><h2>Habitaciones</h2>
 
-    @media (max-width:640px){
-      section{padding:64px 0}
-      .nav-wrap{min-height:72px}
-      .brand img{height:50px;max-width:210px}
-      .booking-grid{grid-template-columns:1fr}
-      .rooms{grid-template-columns:1fr}
-      .footer-wrap{flex-direction:column;align-items:flex-start}
-      .hero h1{font-size:2.6rem}
-    }
-  </style></head>
-<body>  <header>
-    <div class="container nav-wrap">
-      <a href="#top" class="brand">
-        <img src="Screenshot_20260420_143401_Chrome.jpg" alt="Parador Boquemar logo">
-      </a>  <nav>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#amenidades">Amenidades</a>
-    <a href="#habitaciones">Habitaciones</a>
-    <a href="#hotel">Hotel</a>
-    <a href="#ubicacion">Ubicación</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#reservar" class="btn btn-primary">Reservar</a>
-  </nav>
+<div class="rooms">
+
+  <!-- STANDARD -->
+  <div class="room">
+    <img src="Screenshot_20260420_160636_Chrome.jpg">
+    <div class="room-content">
+      <h3>Habitación Standard</h3>
+      <p>Opción cómoda y práctica para estadías cortas.</p>
+
+      <span class="tag">1er piso</span>
+      <span class="tag">2-3 huéspedes</span>
+
+      <a href="#reservar" class="btn">Reservar</a>
+    </div>
+  </div>
+
+  <!-- DELUXE -->
+  <div class="room">
+    <img src="Screenshot_20260420_160703_Chrome.jpg">
+    <div class="room-content">
+      <h3>Habitación Deluxe</h3>
+      <p>Más privacidad y mejor experiencia en segundo nivel.</p>
+
+      <span class="tag">2do piso</span>
+      <span class="tag">2 huéspedes</span>
+
+      <a href="#reservar" class="btn">Reservar</a>
+    </div>
+  </div>
+
+  <!-- JUNIOR SUITE DESTACADA -->
+  <div class="room featured">
+    <img src="Screenshot_20260420_160732_Chrome.jpg">
+
+    <div class="room-content">
+      <h3>Junior Suite</h3>
+
+      <p>Ubicada en el tercer piso con balcón privado, ideal para una estadía más tranquila y cómoda.</p>
+
+      <span class="tag">1 cama king</span>
+      <span class="tag">3er piso</span>
+      <span class="tag">Balcón</span>
+      <span class="tag">2 huéspedes</span>
+
+      <ul>
+        <li>Balcón privado</li>
+        <li>Mayor privacidad</li>
+        <li>Algunas con vista parcial a la bahía</li>
+      </ul>
+
+      <a href="#reservar" class="btn">Reservar ahora</a>
+    </div>
+  </div>
+
 </div>
 
-  </header>  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Boquerón, Cabo Rojo · Puerto Rico</div>
-          <h1>Tu estadía en el corazón de Boquerón</h1>
-          <p>Disfruta habitaciones cómodas, piscina y una excelente ubicación cerca de la playa, restaurantes y el ambiente único que hace especial a Boquerón.</p>
-          <div class="hero-actions">
-            <a href="#reservar" class="btn btn-primary">Ver disponibilidad</a>
-            <a href="#habitaciones" class="btn btn-secondary">Ver habitaciones</a>
-          </div>
-        </div>    <aside class="booking-card" id="reservar">
-      <h3>Reserva rápida</h3>
-      <div class="booking-grid">
-        <div class="field">
-          <small>Entrada</small>
-          <strong>Selecciona fecha</strong>
-        </div>
-        <div class="field">
-          <small>Salida</small>
-          <strong>Selecciona fecha</strong>
-        </div>
-        <div class="field">
-          <small>Huéspedes</small>
-          <strong>2 adultos</strong>
-        </div>
-        <div class="field">
-          <small>Mejor tarifa</small>
-          <strong>Reserva directa</strong>
-        </div>
-      </div>
-
-      <div style="margin-top:14px;display:grid;gap:10px;">
-        <a href="#" class="btn btn-dark">Reservar ahora</a>
-        <a href="#habitaciones" class="btn" style="background:#eef3f8;color:var(--navy);">Explorar habitaciones</a>
-      </div>
-
-      <div class="note">Cuando quieras, aquí conectamos el enlace real de reservas.</div>
-    </aside>
   </div>
-</section>
-
-<section id="experiencia">
+</section><section id="reservar">
   <div class="container">
-    <h2 class="section-title">La experiencia Boquemar</h2>
-    <p class="section-subtitle">Todo lo que necesitas para una estadía relajada en una de las zonas más queridas del suroeste de Puerto Rico.</p>
-
-    <div class="experience">
-      <article class="experience-card">
-        <h3>Cerca de la playa</h3>
-        <p>Disfruta una ubicación conveniente para pasar más tiempo en el área costera y menos tiempo moviéndote de un lado a otro.</p>
-      </article>
-
-      <article class="experience-card">
-        <h3>Boquerón a minutos</h3>
-        <p>Restaurantes, paseo, vida nocturna y el ambiente local que distingue al poblado de Boquerón.</p>
-      </article>
-
-      <article class="experience-card">
-        <h3>Descanso y comodidad</h3>
-        <p>Habitaciones cómodas, piscina y una base ideal para escapadas, vacaciones o fines de semana en Cabo Rojo.</p>
-      </article>
-    </div>
+    <h2>Reservar</h2>
+    <p>Pronto podrás reservar directamente desde aquí.</p>
+    <a href="http://www.boquemar.com" class="btn">Ir a reservas</a>
   </div>
-</section>
-
-<section id="amenidades" style="padding-top:24px;">
-  <div class="container">
-    <h2 class="section-title">Amenidades</h2>
-    <p class="section-subtitle">Lo esencial para una estadía cómoda y conveniente.</p>
-
-    <div class="amenities">
-      <article class="amenity">
-        <div class="icon">⌂</div>
-        <h3>Ubicación en Boquerón</h3>
-        <p>Cerca de playa, restaurantes y ambiente local.</p>
-      </article>
-
-      <article class="amenity">
-        <div class="icon">⌐</div>
-        <h3>Piscina</h3>
-        <p>Espacio para relajarte durante tu estadía.</p>
-      </article>
-
-      <article class="amenity">
-        <div class="icon">◉</div>
-        <h3>Wi-Fi</h3>
-        <p>Conectividad para una estadía más cómoda.</p>
-      </article>
-
-      <article class="amenity">
-        <div class="icon">❄</div>
-        <h3>Aire acondicionado</h3>
-        <p>Comodidad esencial para el clima del área.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="habitaciones">
-  <div class="container">
-    <h2 class="section-title">Habitaciones</h2>
-    <p class="section-subtitle">Opciones cómodas y funcionales para distintos tipos de estadía.</p>
-
-    <div class="rooms">
-      <article class="room">
-        <img src="Screenshot_20260420_160636_Chrome.jpg" alt="Habitación Standard">
-        <div class="room-content">
-          <h3>Habitación Standard</h3>
-          <p>Una opción práctica y cómoda para disfrutar Boquerón con excelente ubicación.</p>
-          <div class="tags">
-            <span class="tag">1 full + 1 twin</span>
-            <span class="tag">2–3 huéspedes</span>
-            <span class="tag">1er piso</span>
-          </div>
-          <ul class="room-details">
-            <li>Ideal para parejas o grupos pequeños.</li>
-            <li>Distribución cómoda para estadías cortas o de fin de semana.</li>
-            <li>Ubicada en el primer nivel del hotel.</li>
-          </ul>
-          <a href="#reservar" class="btn btn-dark">Reservar</a>
-        </div>
-      </article>
-
-      <article class="room">
-        <img src="Screenshot_20260420_160703_Chrome.jpg" alt="Habitación Deluxe">
-        <div class="room-content">
-          <h3>Habitación Deluxe</h3>
-          <p>Más privacidad y una experiencia más cómoda para una escapada en Boquerón.</p>
-          <div class="tags">
-            <span class="tag">1 cama queen</span>
-            <span class="tag">2 huéspedes</span>
-            <span class="tag">2do piso</span>
-          </div>
-          <ul class="room-details">
-            <li>Ideal para parejas.</li>
-            <li>Ubicación en segundo nivel.</li>
-            <li>Excelente opción para una estadía más privada.</li>
-          </ul>
-          <a href="#reservar" class="btn btn-dark">Ver disponibilidad</a>
-        </div>
-      </article>
-
-      <article class="room">
-        <img src="Screenshot_20260420_160723_Chrome.jpg" alt="Junior Suite con balcón">
-        <div class="room-content">
-          <h3>Junior Suite</h3>
-          <p>Una opción más amplia y cómoda en el tercer piso, ideal para una estadía más relajada.</p>
-          <div class="tags">
-            <span class="tag">1 cama king</span>
-            <span class="tag">2 huéspedes</span>
-            <span class="tag">3er piso</span>
-          </div>
-          <ul class="room-details">
-            <li>Balcón privado.</li>
-            <li>Mayor sensación de privacidad al estar en el tercer nivel.</li>
-            <li>Ideal para una escapada más tranquila y cómoda.</li>
-          </ul>
-          <a href="#reservar" class="btn btn-dark">Reservar ahora</a>
-        </div>
-      </article>
-
-      <article class="room">
-        <img src="Screenshot_20260420_160723_Chrome.jpg" alt="Junior Suite Bay View">
-        <div class="room-content">
-          <h3>Junior Suite Bay View</h3>
-          <p>Seleccionadas unidades del tercer piso ofrecen balcón y vistas parciales hacia la bahía.</p>
-          <div class="tags">
-            <span class="tag">Vista parcial</span>
-            <span class="tag">Balcón</span>
-            <span class="tag">Sujeto a disponibilidad</span>
-          </div>
-          <ul class="room-details">
-            <li>Disponible solo en algunas habitaciones del lado de la bahía.</li>
-            <li>Ubicada en el tercer piso.</li>
-            <li>Perfecta para huéspedes que buscan una experiencia más especial.</li>
-          </ul>
-          <a href="#reservar" class="btn btn-dark">Consultar disponibilidad</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="hotel">
-  <div class="container split">
-    <div>
-      <h2 class="section-title">Disfruta el hotel</h2>
-      <p class="section-subtitle">Piscina, áreas cómodas y una estadía pensada para relajarte y disfrutar tu tiempo en Boquerón.</p>
-      <p style="color:var(--muted);margin-bottom:18px;">Parador Boquemar ofrece una experiencia práctica y acogedora para quienes buscan descanso, buena ubicación y cercanía a la playa.</p>
-      <a href="#ubicacion" class="btn btn-dark">Ver ubicación</a>
-    </div>
-
-    <div class="hotel-grid">
-      <img src="Screenshot_20260420_160536_Chrome.jpg" alt="Piscina del hotel">
-      <img src="Screenshot_20260420_160540_Chrome.jpg" alt="Área de piscina del hotel">
-    </div>
-  </div>
-</section>
-
-<section id="ubicacion">
-  <div class="container split">
-    <div class="location-card">
-      <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem);">Ubicación estratégica</h2>
-      <p class="section-subtitle" style="margin-bottom:0;">Una excelente base para disfrutar Boquerón y explorar Cabo Rojo.</p>
-      <ul class="location-list">
-        <li>A pasos del poblado de Boquerón</li>
-        <li>Cerca del Balneario de Boquerón</li>
-        <li>Acceso rápido a restaurantes y vida nocturna</li>
-        <li>Buena base para explorar Cabo Rojo</li>
-      </ul>
-    </div>
-
-    <div class="location-card" style="padding:0;overflow:hidden;min-height:340px;">
-      <iframe
-        title="Mapa de Boquerón"
-        src="https://www.google.com/maps?q=Carretera%20101%20Poblado%20Boquer%C3%B3n%20Cabo%20Rojo%20Puerto%20Rico&z=14&output=embed"
-        width="100%"
-        height="100%"
-        style="border:0;min-height:340px;"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
-
-<section id="contacto">
-  <div class="container">
-    <h2 class="section-title">Contacto</h2>
-    <p class="section-subtitle">Información útil para que el huésped pueda ubicarse y comunicarse fácilmente.</p>
-
-    <div class="contact-grid">
-      <article class="contact-card">
-        <h3>Dirección</h3>
-        <p>Carretera 101, Poblado Boquerón, Cabo Rojo, Puerto Rico 00622</p>
-      </article>
-
-      <article class="contact-card">
-        <h3>Teléfonos</h3>
-        <p>787.851.0591<br>787.851.2158</p>
-      </article>
-
-      <article class="contact-card">
-        <h3>Servicio</h3>
-        <p>Recepción 24 horas, estacionamiento gratuito y amenidades para una estadía más cómoda.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:12px;">
-  <div class="container">
-    <div class="cta">
-      <h2>Reserva tu estadía en Boquerón</h2>
-      <p>Disfruta una ubicación excelente, habitaciones cómodas y el ambiente único de Boquerón en Parador Boquemar.</p>
-      <a href="#reservar" class="btn btn-light">Reservar ahora</a>
-    </div>
-  </div>
-</section>
-
-  </main>  <footer>
-    <div class="container footer-wrap">
-      <div>
-        <strong style="color:var(--navy);">Parador Boquemar</strong><br>
-        Carretera 101, Poblado Boquerón, Cabo Rojo, Puerto Rico 00622
-      </div>
-      <div>© 2026 Parador Boquemar. Todos los derechos reservados.</div>
-    </div>
-  </footer></body>
+</section><footer>
+  Parador Boquemar · Cabo Rojo, Puerto Rico
+</footer></body>
 </html>

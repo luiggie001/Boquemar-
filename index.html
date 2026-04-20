@@ -1,111 +1,162 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parador Boquemar | Boquerón, Puerto Rico</title>
-  <meta name="description" content="Stay in the heart of Boquerón, Puerto Rico. Steps from the beach, close to restaurants, nightlife, and local attractions." />
+  <meta name="description" content="Hospédate en el corazón de Boquerón. Cerca de la playa, restaurantes y atracciones de Cabo Rojo." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <style>
     :root{
-      --navy:#0e2340;
-      --blue:#1a4f8b;
-      --gold:#c99a2e;
+      --navy:#102844;
+      --blue:#1f5f9e;
+      --gold:#c79a31;
       --sand:#f6f2ea;
       --white:#ffffff;
-      --text:#1b2430;
+      --text:#1f2937;
       --muted:#667085;
       --card:#ffffff;
-      --shadow:0 20px 50px rgba(8,25,45,.12);
-      --radius:22px;
+      --shadow:0 18px 45px rgba(10,25,45,.12);
+      --radius:24px;
       --max:1180px;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:"Inter",sans-serif;
       color:var(--text);
       background:var(--sand);
       line-height:1.5;
     }
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin:0 auto;
+    }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
       padding:14px 24px;
       border-radius:999px;
       font-weight:700;
-      transition:.2s ease;
       border:none;
       cursor:pointer;
+      transition:.2s ease;
     }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:var(--gold);color:#fff}
-    .btn-secondary{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.28)}
-    .btn-dark{background:var(--navy);color:#fff}
-    .btn-light{background:#fff;color:var(--navy)}
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#fff;
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.26);
+      backdrop-filter:blur(8px);
+    }
+
+    .btn-dark{
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .btn-light{
+      background:#fff;
+      color:var(--navy);
+    }
 
     header{
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(14,35,64,.82);
+      background:rgba(16,40,68,.86);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
+
     .nav-wrap{
-      min-height:78px;
+      min-height:86px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:18px;
     }
+
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
-      color:#fff;
-      font-weight:800;
-      letter-spacing:.02em;
     }
-    .brand-badge{
-      width:42px;height:42px;border-radius:14px;
-      background:linear-gradient(135deg,#1c69b0,#2aa6da 62%,#d3a73c 62%);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.24);
+
+    .brand img{
+      height:64px;
+      width:auto;
+      object-fit:contain;
+      background:#fff;
+      padding:6px 10px;
+      border-radius:14px;
+      box-shadow:0 8px 22px rgba(0,0,0,.12);
     }
+
     nav{
       display:flex;
       align-items:center;
       gap:22px;
-      color:rgba(255,255,255,.88);
+      color:rgba(255,255,255,.9);
       font-size:.95rem;
     }
-    nav a:hover{color:#fff}
+
+    nav a:hover{
+      color:#fff;
+    }
 
     .hero{
       min-height:94vh;
-      color:#fff;
       position:relative;
+      color:#fff;
       background:
-        linear-gradient(rgba(7,20,34,.48), rgba(7,20,34,.64)),
+        linear-gradient(rgba(7,19,33,.48), rgba(7,19,33,.68)),
         url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       display:flex;
       align-items:center;
       overflow:hidden;
     }
+
     .hero::after{
       content:"";
       position:absolute;
-      left:0;right:0;bottom:0;
+      left:0;
+      right:0;
+      bottom:0;
       height:140px;
       background:linear-gradient(180deg, rgba(246,242,234,0) 0%, var(--sand) 100%);
     }
+
     .hero-grid{
       position:relative;
       z-index:2;
@@ -115,28 +166,36 @@
       align-items:end;
       padding:88px 0 120px;
     }
+
     .eyebrow{
       display:inline-flex;
       padding:8px 14px;
       border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);
       font-size:.9rem;
       margin-bottom:18px;
     }
+
     .hero h1{
-      font-size:clamp(2.6rem, 5.3vw, 5.4rem);
+      font-size:clamp(2.7rem, 5.3vw, 5.5rem);
       line-height:.96;
-      max-width:720px;
       margin-bottom:18px;
+      max-width:720px;
     }
+
     .hero p{
       max-width:620px;
       color:rgba(255,255,255,.88);
       font-size:1.08rem;
       margin-bottom:28px;
     }
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
 
     .booking-card{
       background:rgba(255,255,255,.9);
@@ -145,47 +204,57 @@
       padding:22px;
       box-shadow:var(--shadow);
       border:1px solid rgba(255,255,255,.55);
-      backdrop-filter:blur(14px);
+      backdrop-filter:blur(12px);
     }
+
     .booking-card h3{
       color:var(--navy);
       margin-bottom:14px;
       font-size:1.1rem;
     }
+
     .booking-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
     }
+
     .field{
       background:#fff;
       border:1px solid #dde5ec;
       border-radius:18px;
       padding:12px 14px;
     }
+
     .field small{
       display:block;
       color:var(--muted);
       font-size:.8rem;
       margin-bottom:4px;
     }
+
     .field strong{
       color:var(--navy);
       font-size:.95rem;
     }
+
     .note{
       margin-top:12px;
       color:var(--muted);
-      font-size:.85rem;
+      font-size:.84rem;
     }
 
-    section{padding:86px 0}
+    section{
+      padding:86px 0;
+    }
+
     .section-title{
       font-size:clamp(2rem, 3vw, 3rem);
       line-height:1.05;
       color:var(--navy);
       margin-bottom:14px;
     }
+
     .section-subtitle{
       max-width:760px;
       color:var(--muted);
@@ -198,42 +267,65 @@
       grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
+
     .feature{
-      background:rgba(255,255,255,.88);
-      border:1px solid rgba(14,35,64,.08);
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(16,40,68,.08);
       border-radius:var(--radius);
       padding:24px;
       box-shadow:var(--shadow);
     }
-    .feature h3{color:var(--navy);margin-bottom:10px}
-    .feature p{color:var(--muted)}
+
+    .feature h3{
+      color:var(--navy);
+      margin-bottom:10px;
+    }
+
+    .feature p{
+      color:var(--muted);
+    }
 
     .rooms{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:22px;
     }
+
     .room{
       background:#fff;
       border-radius:28px;
       overflow:hidden;
-      border:1px solid rgba(14,35,64,.08);
+      border:1px solid rgba(16,40,68,.08);
       box-shadow:var(--shadow);
     }
+
     .room img{
       width:100%;
       aspect-ratio:4/3;
       object-fit:cover;
     }
-    .room-content{padding:22px}
-    .room-content h3{color:var(--navy);margin-bottom:8px}
-    .room-content p{color:var(--muted);margin-bottom:14px}
+
+    .room-content{
+      padding:22px;
+    }
+
+    .room-content h3{
+      color:var(--navy);
+      margin-bottom:8px;
+    }
+
+    .room-content p{
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
     .tags{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
       margin-bottom:18px;
     }
+
     .tag{
       padding:7px 10px;
       background:#eef4fa;
@@ -249,11 +341,13 @@
       gap:28px;
       align-items:center;
     }
+
     .gallery{
       display:grid;
       grid-template-columns:1.2fr .8fr;
       gap:16px;
     }
+
     .gallery-main,
     .gallery-side > div{
       overflow:hidden;
@@ -261,12 +355,14 @@
       box-shadow:var(--shadow);
       min-height:240px;
     }
+
     .gallery-main img,
     .gallery-side img{
       width:100%;
       height:100%;
       object-fit:cover;
     }
+
     .gallery-side{
       display:grid;
       gap:16px;
@@ -277,30 +373,45 @@
       grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
+
     .review{
       background:rgba(255,255,255,.9);
       border-radius:24px;
       padding:24px;
-      border:1px solid rgba(14,35,64,.08);
+      border:1px solid rgba(16,40,68,.08);
       box-shadow:var(--shadow);
     }
-    .stars{color:var(--gold);margin-bottom:12px;letter-spacing:.08em}
-    .review p{color:var(--muted);margin-bottom:16px}
-    .review strong{color:var(--navy)}
+
+    .stars{
+      color:var(--gold);
+      margin-bottom:12px;
+      letter-spacing:.08em;
+    }
+
+    .review p{
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+
+    .review strong{
+      color:var(--navy);
+    }
 
     .location-card{
       background:#fff;
       border-radius:28px;
       padding:28px;
       box-shadow:var(--shadow);
-      border:1px solid rgba(14,35,64,.08);
+      border:1px solid rgba(16,40,68,.08);
     }
+
     .location-list{
       list-style:none;
       display:grid;
       gap:10px;
       margin-top:18px;
     }
+
     .location-list li{
       background:#f3f7fb;
       padding:14px 16px;
@@ -310,16 +421,18 @@
 
     .cta{
       text-align:center;
-      background:linear-gradient(135deg,var(--navy), #154c7d);
+      background:linear-gradient(135deg,var(--navy), #184f80);
       color:#fff;
       padding:56px 24px;
       border-radius:34px;
       box-shadow:var(--shadow);
     }
+
     .cta h2{
-      font-size:clamp(2rem, 3vw, 3.2rem);
+      font-size:clamp(2rem,3vw,3.2rem);
       margin-bottom:12px;
     }
+
     .cta p{
       color:rgba(255,255,255,.84);
       margin-bottom:24px;
@@ -329,18 +442,22 @@
       padding:34px 0 48px;
       color:var(--muted);
     }
+
     .footer-wrap{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:18px;
       flex-wrap:wrap;
-      border-top:1px solid rgba(14,35,64,.10);
+      border-top:1px solid rgba(16,40,68,.10);
       padding-top:24px;
     }
 
     @media (max-width: 980px){
-      nav{display:none}
+      nav{
+        display:none;
+      }
+
       .hero-grid,
       .features,
       .rooms,
@@ -349,31 +466,62 @@
       .reviews{
         grid-template-columns:1fr;
       }
-      .gallery-side{grid-template-columns:1fr 1fr}
-      .hero{min-height:auto}
-      .hero-grid{padding-top:54px}
+
+      .gallery-side{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-grid{
+        padding-top:54px;
+      }
     }
 
     @media (max-width: 640px){
-      section{padding:64px 0}
-      .nav-wrap{min-height:70px}
-      .booking-grid{grid-template-columns:1fr}
-      .gallery-side{grid-template-columns:1fr}
-      .footer-wrap{flex-direction:column;align-items:flex-start}
-      .hero h1{font-size:2.7rem}
+      section{
+        padding:64px 0;
+      }
+
+      .nav-wrap{
+        min-height:76px;
+      }
+
+      .brand img{
+        height:54px;
+        max-width:220px;
+      }
+
+      .booking-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-side{
+        grid-template-columns:1fr;
+      }
+
+      .footer-wrap{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .hero h1{
+        font-size:2.6rem;
+      }
     }
   </style></head>
 <body>  <header>
     <div class="container nav-wrap">
       <a href="#top" class="brand">
-        <div class="brand-badge"></div>
-        <span>Parador Boquemar</span>
+        <img src="Screenshot_20260420_143401_Chrome.jpg" alt="Parador Boquemar Logo">
       </a>  <nav>
-    <a href="#rooms">Rooms</a>
-    <a href="#experience">Experience</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#location">Location</a>
-    <a href="#book" class="btn btn-primary">Reserve Now</a>
+    <a href="#habitaciones">Habitaciones</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#resenas">Reseñas</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#reservar" class="btn btn-primary">Reservar</a>
   </nav>
 </div>
 
@@ -382,179 +530,185 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Boquerón, Cabo Rojo · Puerto Rico</div>
-          <h1>Stay in the heart of Boquerón</h1>
-          <p>Steps from the beach, close to restaurants and nightlife, and designed for a more modern booking experience.</p>
+          <h1>Hospédate en el corazón de Boquerón</h1>
+          <p>Disfruta una estadía cerca de la playa, restaurantes, vida nocturna y atracciones locales en uno de los destinos más visitados del suroeste de Puerto Rico.</p>
           <div class="hero-actions">
-            <a href="#book" class="btn btn-primary">Check Availability</a>
-            <a href="#rooms" class="btn btn-secondary">View Rooms</a>
+            <a href="#reservar" class="btn btn-primary">Ver disponibilidad</a>
+            <a href="#habitaciones" class="btn btn-secondary">Ver habitaciones</a>
           </div>
-        </div>    <aside class="booking-card" id="book">
-      <h3>Quick booking</h3>
+        </div>    <aside class="booking-card" id="reservar">
+      <h3>Reserva rápida</h3>
       <div class="booking-grid">
         <div class="field">
-          <small>Check in</small>
-          <strong>Select date</strong>
+          <small>Entrada</small>
+          <strong>Selecciona fecha</strong>
         </div>
         <div class="field">
-          <small>Check out</small>
-          <strong>Select date</strong>
+          <small>Salida</small>
+          <strong>Selecciona fecha</strong>
         </div>
         <div class="field">
-          <small>Guests</small>
-          <strong>2 Adults</strong>
+          <small>Huéspedes</small>
+          <strong>2 adultos</strong>
         </div>
         <div class="field">
-          <small>Best rate</small>
-          <strong>Direct booking</strong>
+          <small>Mejor tarifa</small>
+          <strong>Reserva directa</strong>
         </div>
       </div>
+
       <div style="margin-top:14px;display:grid;gap:10px;">
-        <a href="#" class="btn btn-dark">Reserve Your Stay</a>
-        <a href="#rooms" class="btn" style="background:#eef3f8;color:var(--navy);">Browse Rooms</a>
+        <a href="#" class="btn btn-dark">Reservar ahora</a>
+        <a href="#habitaciones" class="btn" style="background:#eef3f8;color:var(--navy);">Explorar habitaciones</a>
       </div>
-      <div class="note">Later, replace the Reserve button link with the real booking link.</div>
+
+      <div class="note">Luego reemplazamos el botón por el enlace real de reservas, Booking o el sistema que usen.</div>
     </aside>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2 class="section-title">Why guests choose Boquemar</h2>
-    <p class="section-subtitle">Make the location, the beach access, and the overall vibe obvious in seconds. This part should sell the stay, not just describe it.</p>
+    <h2 class="section-title">Por qué quedarse en Boquemar</h2>
+    <p class="section-subtitle">La página debe vender la experiencia completa: ubicación, acceso a la playa, cercanía al poblado y una estadía cómoda para disfrutar Boquerón de verdad.</p>
 
     <div class="features">
       <article class="feature">
-        <h3>Walk to the beach</h3>
-        <p>Stay close to the shoreline and enjoy Boquerón without overcomplicating the message.</p>
+        <h3>Cerca de la playa</h3>
+        <p>Ubicación conveniente para disfrutar el área costera y pasar más tiempo en Boquerón, no guiando de un lado a otro.</p>
       </article>
+
       <article class="feature">
-        <h3>Close to everything</h3>
-        <p>Restaurants, nightlife, and local spots nearby. Convenience should be one of the strongest selling points.</p>
+        <h3>Todo cerca</h3>
+        <p>Restaurantes, ambiente local, paseo tablado y spots del área a pocos minutos de distancia.</p>
       </article>
+
       <article class="feature">
-        <h3>Relaxed coastal stay</h3>
-        <p>A cleaner design, better visual flow, and stronger calls to action make the property feel more premium.</p>
+        <h3>Ambiente relajado</h3>
+        <p>Una experiencia pensada para descansar, salir a comer bien y disfrutar Cabo Rojo con más comodidad.</p>
       </article>
     </div>
   </div>
 </section>
 
-<section id="rooms" style="padding-top:24px;">
+<section id="habitaciones" style="padding-top:24px;">
   <div class="container">
-    <h2 class="section-title">Rooms that feel clear and bookable</h2>
-    <p class="section-subtitle">The current site should feel easier to trust. Bigger visuals, cleaner labels, and direct buttons do most of that work.</p>
+    <h2 class="section-title">Habitaciones</h2>
+    <p class="section-subtitle">Aquí luego se pueden sustituir estas imágenes por fotos reales del hotel, pero ya la estructura queda lista, limpia y enfocada en conversión.</p>
 
     <div class="rooms">
       <article class="room">
-        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Standard room">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Habitación estándar">
         <div class="room-content">
-          <h3>Standard Room</h3>
-          <p>Simple, comfortable, and presented in a way that feels more modern and easier to book.</p>
+          <h3>Habitación Standard</h3>
+          <p>Una opción cómoda y práctica para descansar luego de disfrutar playa, pueblo y atracciones cercanas.</p>
           <div class="tags">
             <span class="tag">A/C</span>
             <span class="tag">Wi-Fi</span>
-            <span class="tag">Comfortable stay</span>
+            <span class="tag">Cómoda</span>
           </div>
-          <a href="#book" class="btn btn-dark">Reserve Now</a>
+          <a href="#reservar" class="btn btn-dark">Reservar</a>
         </div>
       </article>
 
       <article class="room">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" alt="Double room">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" alt="Habitación doble">
         <div class="room-content">
-          <h3>Double Room</h3>
-          <p>More space, a stronger presentation, and a layout that feels cleaner from the first click.</p>
+          <h3>Habitación Doble</h3>
+          <p>Ideal para quienes quieren más espacio y una estadía cómoda cerca del corazón de Boquerón.</p>
           <div class="tags">
-            <span class="tag">2 Beds</span>
-            <span class="tag">Spacious</span>
+            <span class="tag">2 camas</span>
+            <span class="tag">Espaciosa</span>
             <span class="tag">TV</span>
           </div>
-          <a href="#book" class="btn btn-dark">Check Availability</a>
+          <a href="#reservar" class="btn btn-dark">Ver disponibilidad</a>
         </div>
       </article>
 
       <article class="room">
-        <img src="https://images.unsplash.com/photo-1560448075-bb4caa6eeb4d?auto=format&fit=crop&w=900&q=80" alt="Suite room">
+        <img src="https://images.unsplash.com/photo-1560448075-bb4caa6eeb4d?auto=format&fit=crop&w=900&q=80" alt="Suite">
         <div class="room-content">
           <h3>Suite</h3>
-          <p>For guests who want a stay that feels elevated, clean, and worth booking directly.</p>
+          <p>Una opción más premium para huéspedes que quieren una experiencia más completa y relajada.</p>
           <div class="tags">
             <span class="tag">Premium</span>
-            <span class="tag">Private feel</span>
-            <span class="tag">Best option</span>
+            <span class="tag">Privada</span>
+            <span class="tag">Mejor opción</span>
           </div>
-          <a href="#book" class="btn btn-dark">Book This Room</a>
+          <a href="#reservar" class="btn btn-dark">Reservar ahora</a>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<section id="experiencia">
   <div class="container split">
     <div>
-      <h2 class="section-title">Experience Boquerón the right way</h2>
-      <p class="section-subtitle">Beach, local flavor, and an easier path to booking. This should feel like a getaway page, not an old brochure.</p>
-      <p style="color:var(--muted);margin-bottom:18px;">Once the structure is live and working, you can swap these images for real Boquemar photos later without rebuilding the whole site again.</p>
-      <a href="#reviews" class="btn btn-dark">See Reviews</a>
+      <h2 class="section-title">Disfruta Boquerón y Cabo Rojo</h2>
+      <p class="section-subtitle">Playa, gastronomía, paseo, ambiente nocturno y acceso a otras atracciones del área. La página debe hacer que todo eso se sienta claro desde el primer vistazo.</p>
+      <p style="color:var(--muted);margin-bottom:18px;">Más adelante se pueden añadir fotos reales del hotel, piscina, habitaciones y área de recepción para hacerla todavía más fuerte.</p>
+      <a href="#resenas" class="btn btn-dark">Ver reseñas</a>
     </div>
 
     <div class="gallery">
       <div class="gallery-main">
-        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80" alt="Boqueron beach">
+        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80" alt="Playa">
       </div>
       <div class="gallery-side">
         <div>
-          <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=80" alt="Nightlife">
+          <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=80" alt="Vida nocturna">
         </div>
         <div>
-          <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210c0?auto=format&fit=crop&w=900&q=80" alt="Relaxing coastal stay">
+          <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210c0?auto=format&fit=crop&w=900&q=80" alt="Relajación">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="reviews" style="padding-top:18px;">
+<section id="resenas" style="padding-top:18px;">
   <div class="container">
-    <h2 class="section-title">A little trust goes a long way</h2>
-    <p class="section-subtitle">Even a basic review section helps reduce doubt and makes the page feel more complete and credible.</p>
+    <h2 class="section-title">Una página que inspire confianza</h2>
+    <p class="section-subtitle">Aunque luego las reseñas se cambien por reseñas reales, esta sección ya le da más credibilidad y mejor estructura al sitio.</p>
 
     <div class="reviews">
       <article class="review">
         <div class="stars">★★★★★</div>
-        <p>Excellent location near the beach and close to everything. The stay feels easy and convenient.</p>
-        <strong>Guest review</strong>
+        <p>Excelente ubicación para disfrutar Boquerón, la playa y el ambiente del área.</p>
+        <strong>Hu&eacute;sped</strong>
       </article>
+
       <article class="review">
         <div class="stars">★★★★★</div>
-        <p>Comfortable room, good vibe, and a place that sells much better when the page actually looks modern.</p>
-        <strong>Guest review</strong>
+        <p>Una estadía cómoda, bien ubicada y perfecta para relajarse en Cabo Rojo.</p>
+        <strong>Hu&eacute;sped</strong>
       </article>
+
       <article class="review">
         <div class="stars">★★★★★</div>
-        <p>Perfect for a relaxed Boquerón getaway with quick access to the town and waterfront.</p>
-        <strong>Guest review</strong>
+        <p>Ideal para vacaciones cortas o escapadas de fin de semana cerca de todo.</p>
+        <strong>Hu&eacute;sped</strong>
       </article>
     </div>
   </div>
 </section>
 
-<section id="location">
+<section id="ubicacion">
   <div class="container split">
     <div class="location-card">
-      <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem);">Right where people want to be</h2>
-      <p class="section-subtitle" style="margin-bottom:0;">Use this part to stop making guests guess. The location should feel like an advantage immediately.</p>
+      <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem);">Ubicación estratégica</h2>
+      <p class="section-subtitle" style="margin-bottom:0;">Boquemar debe presentarse como una base cómoda para disfrutar Boquerón y otras atracciones de Cabo Rojo.</p>
       <ul class="location-list">
-        <li>Steps from the beach in Boquerón</li>
-        <li>Close to restaurants and local nightlife</li>
-        <li>Easy base for a Cabo Rojo stay</li>
+        <li>Cerca de la playa y el poblado de Boquerón</li>
+        <li>Acceso rápido a restaurantes y vida nocturna</li>
+        <li>Buena ubicación para explorar Cabo Rojo</li>
       </ul>
     </div>
 
     <div class="location-card" style="padding:0;overflow:hidden;min-height:340px;">
       <iframe
-        title="Map of Boquerón, Cabo Rojo"
+        title="Mapa de Boquerón"
         src="https://www.google.com/maps?q=Boquer%C3%B3n%20Cabo%20Rojo%20Puerto%20Rico&z=14&output=embed"
         width="100%"
         height="100%"
@@ -568,9 +722,9 @@
 <section style="padding-top:12px;">
   <div class="container">
     <div class="cta">
-      <h2>Ready to stay in Boquerón?</h2>
-      <p>Make the booking path obvious, keep the design clean, and upgrade the real photos later.</p>
-      <a href="#book" class="btn btn-light">Reserve Your Stay</a>
+      <h2>Reserva tu estadía en Boquerón</h2>
+      <p>La estructura ya está lista. Lo próximo es conectar reservas reales y luego el dominio boquemar.com.</p>
+      <a href="#reservar" class="btn btn-light">Reservar ahora</a>
     </div>
   </div>
 </section>
@@ -581,7 +735,7 @@
         <strong style="color:var(--navy);">Parador Boquemar</strong><br>
         Boquerón, Cabo Rojo, Puerto Rico
       </div>
-      <div>© 2026 Parador Boquemar. All rights reserved.</div>
+      <div>© 2026 Parador Boquemar. Todos los derechos reservados.</div>
     </div>
   </footer></body>
 </html>

@@ -222,8 +222,16 @@
     background:rgba(255,255,255,.92);
     border:1px solid rgba(14,39,65,.08);
     border-radius:var(--radius);
-    padding:24px;
+    overflow:hidden;
     box-shadow:var(--shadow);
+  }
+  .experience-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .experience-copy{
+    padding:22px;
   }
   .experience-card h3{
     color:var(--navy);
@@ -536,18 +544,27 @@
       <h2 class="section-title">La experiencia Boquemar</h2>
       <p class="section-subtitle">Todo lo que necesitas para una estadía relajada en una de las zonas más queridas del suroeste de Puerto Rico.</p>  <div class="experience">
     <article class="experience-card">
-      <h3>Cerca de la playa</h3>
-      <p>Disfruta una ubicación conveniente para pasar más tiempo en el área costera y menos tiempo moviéndote de un lado a otro.</p>
+      <img src="https://images.unsplash.com/photo-1745957170038-d62b52976c2b?auto=format&fit=crop&w=1200&q=80" alt="Playa en Puerto Rico al atardecer">
+      <div class="experience-copy">
+        <h3>Cerca de la playa</h3>
+        <p>Disfruta una ubicación conveniente para pasar más tiempo en el área costera y menos tiempo moviéndote de un lado a otro.</p>
+      </div>
     </article>
 
     <article class="experience-card">
-      <h3>Boquerón a minutos</h3>
-      <p>Restaurantes, paseo, vida nocturna y el ambiente local que distingue al poblado de Boquerón.</p>
+      <img src="https://images.unsplash.com/photo-1737932753987-bf9d5550e479?auto=format&fit=crop&w=1200&q=80" alt="Ambiente nocturno con luces">
+      <div class="experience-copy">
+        <h3>Boquerón a minutos</h3>
+        <p>Restaurantes, paseo, vida nocturna y el ambiente local que distingue al poblado de Boquerón.</p>
+      </div>
     </article>
 
     <article class="experience-card">
-      <h3>Descanso y comodidad</h3>
-      <p>Habitaciones cómodas, piscina y una base ideal para escapadas, vacaciones o fines de semana en Cabo Rojo.</p>
+      <img src="Screenshot_20260420_160536_Chrome.jpg" alt="Piscina del hotel">
+      <div class="experience-copy">
+        <h3>Descanso y comodidad</h3>
+        <p>Habitaciones cómodas, piscina y una base ideal para escapadas, vacaciones o fines de semana en Cabo Rojo.</p>
+      </div>
     </article>
   </div>
 </div>

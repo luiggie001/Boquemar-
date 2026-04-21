@@ -22,6 +22,7 @@
       --shadow-strong:0 28px 60px rgba(10,25,45,.16);
       --radius:24px;
       --max:1200px;
+      --lang-bg:rgba(255,255,255,.12);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -39,6 +40,18 @@
     a{text-decoration:none;color:inherit}
     .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
 
+    [data-lang]{display:none}
+    body.lang-es [data-lang="es"]{display:initial}
+    body.lang-en [data-lang="en"]{display:initial}
+
+    .lang-block[data-lang]{display:none}
+    body.lang-es .lang-block[data-lang="es"]{display:block}
+    body.lang-en .lang-block[data-lang="en"]{display:block}
+
+    .lang-inline[data-lang]{display:none}
+    body.lang-es .lang-inline[data-lang="es"]{display:inline}
+    body.lang-en .lang-inline[data-lang="en"]{display:inline}
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -50,6 +63,7 @@
       cursor:pointer;
       transition:.25s ease;
       text-align:center;
+      gap:8px;
     }
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{
@@ -70,6 +84,12 @@
       background:rgba(255,255,255,.12);
       color:#fff;
       border:1px solid rgba(255,255,255,.24);
+      backdrop-filter:blur(8px);
+    }
+    .btn-call{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.28);
       backdrop-filter:blur(8px);
     }
 
@@ -98,6 +118,11 @@
       border-radius:16px;
       box-shadow:0 10px 24px rgba(0,0,0,.14);
     }
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
     nav{
       display:flex;
       align-items:center;
@@ -106,6 +131,31 @@
       font-size:.95rem;
     }
     nav a:hover{color:#fff}
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      background:var(--lang-bg);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      padding:4px;
+    }
+    .lang-switch button{
+      border:none;
+      background:transparent;
+      color:#fff;
+      font-weight:700;
+      padding:8px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:.85rem;
+    }
+    body.lang-es .lang-switch button[data-set-lang="es"],
+    body.lang-en .lang-switch button[data-set-lang="en"]{
+      background:#fff;
+      color:var(--navy);
+    }
 
     .hero{
       min-height:94vh;
@@ -172,6 +222,22 @@
       margin-top:10px;
       color:rgba(255,255,255,.88);
       font-size:.9rem;
+    }
+    .hero-callout{
+      margin-top:18px;
+      display:inline-flex;
+      flex-direction:column;
+      gap:10px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:20px;
+      padding:14px 16px;
+      max-width:480px;
+    }
+    .hero-callout-text{
+      font-size:.98rem;
+      color:#fff;
+      font-weight:600;
     }
 
     .booking-card{
@@ -406,6 +472,9 @@
       border-radius:999px;
       z-index:2;
     }
+    body.lang-en .room.featured::before{
+      content:"Recommended";
+    }
 
     .urgency{
       text-align:center;
@@ -481,6 +550,14 @@
       margin-bottom:10px;
     }
     .contact-card p{color:var(--muted)}
+
+    .contact-call{
+      margin-top:28px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:center;
+    }
 
     .cta{
       text-align:center;
@@ -565,91 +642,216 @@
         bottom:14px;
         padding:12px 16px;
       }
+      .lang-switch{
+        margin-left:auto;
+      }
     }
   </style></head>
-<body><header>
+<body class="lang-es"><header>
   <div class="container nav-wrap">
     <a href="#top" class="brand">
       <img src="Screenshot_20260420_143401_Chrome.jpg" alt="Parador Boquemar logo">
-    </a><nav>
-  <a href="#experiencia">Experiencia</a>
-  <a href="#amenidades">Amenidades</a>
-  <a href="#habitaciones">Habitaciones</a>
-  <a href="#hotel">Hotel</a>
-  <a href="#ubicacion">Ubicación</a>
-  <a href="#contacto">Contacto</a>
-  <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-primary">Ver disponibilidad</a>
-</nav>
+    </a><div class="nav-right">
+  <nav>
+    <a href="#experiencia">
+      <span class="lang-inline" data-lang="es">Experiencia</span>
+      <span class="lang-inline" data-lang="en">Experience</span>
+    </a>
+    <a href="#amenidades">
+      <span class="lang-inline" data-lang="es">Amenidades</span>
+      <span class="lang-inline" data-lang="en">Amenities</span>
+    </a>
+    <a href="#habitaciones">
+      <span class="lang-inline" data-lang="es">Habitaciones</span>
+      <span class="lang-inline" data-lang="en">Rooms</span>
+    </a>
+    <a href="#hotel">Hotel</a>
+    <a href="#ubicacion">
+      <span class="lang-inline" data-lang="es">Ubicación</span>
+      <span class="lang-inline" data-lang="en">Location</span>
+    </a>
+    <a href="#contacto">
+      <span class="lang-inline" data-lang="es">Contacto</span>
+      <span class="lang-inline" data-lang="en">Contact</span>
+    </a>
+    <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-primary">
+      <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+      <span class="lang-inline" data-lang="en">Check Availability</span>
+    </a>
+  </nav>
+
+  <div class="lang-switch">
+    <button type="button" data-set-lang="es">ES</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</div>
 
   </div>
 </header><main id="top">
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Boquerón, Cabo Rojo · Puerto Rico</div>
-        <h1>Hospédate en el corazón de Boquerón, a pasos de la playa y la vida nocturna</h1>
-        <p>Ubicación privilegiada, piscina y habitaciones cómodas para disfrutar Cabo Rojo sin complicaciones.</p>
-        <div class="hero-actions">
-          <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-primary">Ver disponibilidad</a>
-          <a href="#habitaciones" class="btn btn-secondary">Ver habitaciones</a>
-        </div>
-        <div class="hero-trust">⭐ Ubicación favorita de nuestros huéspedes · Estacionamiento privado disponible</div>
-        <div class="hero-urgency">Alta demanda en fines de semana y temporada alta</div>
-      </div>  <aside class="booking-card" id="reservar">
-    <h3>Reserva directa</h3>
+        <div class="eyebrow">Boquerón, Cabo Rojo · Puerto Rico</div>    <div class="lang-block" data-lang="es">
+      <h1>Hospédate en el corazón de Boquerón, a pasos de la playa y la vida nocturna</h1>
+      <p>Ubicación privilegiada, piscina y habitaciones cómodas para disfrutar Cabo Rojo sin complicaciones.</p>
+    </div>
+
+    <div class="lang-block" data-lang="en">
+      <h1>Stay in the heart of Boquerón, steps from the beach and nightlife</h1>
+      <p>Prime location, pool, and comfortable rooms to enjoy Cabo Rojo with no hassle.</p>
+    </div>
+
+    <div class="hero-actions">
+      <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-primary">
+        <span class="lang-inline" data-lang="es">Reservar ahora</span>
+        <span class="lang-inline" data-lang="en">Book Now</span>
+      </a>
+      <a href="#habitaciones" class="btn btn-secondary">
+        <span class="lang-inline" data-lang="es">Ver habitaciones</span>
+        <span class="lang-inline" data-lang="en">View Rooms</span>
+      </a>
+    </div>
+
+    <div class="hero-trust">
+      <span class="lang-inline" data-lang="es">⭐ Ubicación favorita de nuestros huéspedes · Estacionamiento privado disponible</span>
+      <span class="lang-inline" data-lang="en">⭐ Guest favorite location · Private parking available</span>
+    </div>
+
+    <div class="hero-urgency">
+      <span class="lang-inline" data-lang="es">Alta demanda en fines de semana y temporada alta</span>
+      <span class="lang-inline" data-lang="en">High demand on weekends and peak season</span>
+    </div>
+
+    <div class="hero-callout">
+      <div class="hero-callout-text">
+        <span class="lang-inline" data-lang="es">Para mejores tarifas, llámanos directamente al 787-851-0591</span>
+        <span class="lang-inline" data-lang="en">For the best available rates, call us directly at 787-851-0591</span>
+      </div>
+      <div>
+        <a href="tel:17878510591" class="btn btn-call">
+          <span class="lang-inline" data-lang="es">📞 Llamar ahora</span>
+          <span class="lang-inline" data-lang="en">📞 Call Now</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <aside class="booking-card" id="reservar">
+    <h3>
+      <span class="lang-inline" data-lang="es">Reserva directa</span>
+      <span class="lang-inline" data-lang="en">Direct Booking</span>
+    </h3>
+
     <div class="booking-grid">
       <div class="field">
-        <small>Ubicación</small>
+        <small>
+          <span class="lang-inline" data-lang="es">Ubicación</span>
+          <span class="lang-inline" data-lang="en">Location</span>
+        </small>
         <strong>Boquerón, Cabo Rojo</strong>
       </div>
+
       <div class="field">
-        <small>Reserva</small>
-        <strong>Motor oficial del hotel</strong>
+        <small>
+          <span class="lang-inline" data-lang="es">Reserva</span>
+          <span class="lang-inline" data-lang="en">Booking</span>
+        </small>
+        <strong>
+          <span class="lang-inline" data-lang="es">Motor oficial del hotel</span>
+          <span class="lang-inline" data-lang="en">Official hotel booking engine</span>
+        </strong>
       </div>
+
       <div class="field">
-        <small>Ideal para</small>
-        <strong>Parejas, familias y escapadas</strong>
+        <small>
+          <span class="lang-inline" data-lang="es">Ideal para</span>
+          <span class="lang-inline" data-lang="en">Ideal for</span>
+        </small>
+        <strong>
+          <span class="lang-inline" data-lang="es">Parejas, familias y escapadas</span>
+          <span class="lang-inline" data-lang="en">Couples, families, and getaways</span>
+        </strong>
       </div>
+
       <div class="field">
-        <small>Experiencia</small>
-        <strong>Playa, piscina y ambiente local</strong>
+        <small>
+          <span class="lang-inline" data-lang="es">Experiencia</span>
+          <span class="lang-inline" data-lang="en">Experience</span>
+        </small>
+        <strong>
+          <span class="lang-inline" data-lang="es">Playa, piscina y ambiente local</span>
+          <span class="lang-inline" data-lang="en">Beach, pool, and local atmosphere</span>
+        </strong>
       </div>
     </div>
 
     <div style="margin-top:14px;display:grid;gap:10px;">
-      <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">Ver disponibilidad</a>
-      <a href="#habitaciones" class="btn" style="background:#eef3f8;color:var(--navy);">Explorar habitaciones</a>
+      <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">
+        <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+        <span class="lang-inline" data-lang="en">Check Availability</span>
+      </a>
+      <a href="#habitaciones" class="btn" style="background:#eef3f8;color:var(--navy);">
+        <span class="lang-inline" data-lang="es">Explorar habitaciones</span>
+        <span class="lang-inline" data-lang="en">Explore Rooms</span>
+      </a>
     </div>
 
-    <div class="note">Serás dirigido al motor oficial de reservaciones para completar tu estadía.</div>
+    <div class="note">
+      <span class="lang-inline" data-lang="es">Serás dirigido al motor oficial de reservaciones para completar tu estadía.</span>
+      <span class="lang-inline" data-lang="en">You will be redirected to the official booking engine to complete your stay.</span>
+    </div>
   </aside>
 </div>
 
   </section>  <section id="experiencia">
     <div class="container">
-      <h2 class="section-title">La experiencia Boquemar</h2>
-      <p class="section-subtitle">Una estadía cómoda en una ubicación ideal para disfrutar lo mejor de Boquerón y Cabo Rojo.</p>  <div class="experience">
+      <h2 class="section-title">
+        <span class="lang-inline" data-lang="es">La experiencia Boquemar</span>
+        <span class="lang-inline" data-lang="en">The Boquemar Experience</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-inline" data-lang="es">Una estadía cómoda en una ubicación ideal para disfrutar lo mejor de Boquerón y Cabo Rojo.</span>
+        <span class="lang-inline" data-lang="en">A comfortable stay in an ideal location to enjoy the best of Boquerón and Cabo Rojo.</span>
+      </p>  <div class="experience">
     <article class="experience-card">
       <img src="Screenshot_20260420_185646_Chrome.jpg" alt="Playa de Boquerón">
       <div class="experience-copy">
-        <h3>Cerca de la playa</h3>
-        <p>Disfruta más tiempo en la costa y menos tiempo moviéndote. La playa está a minutos del hotel.</p>
+        <h3>
+          <span class="lang-inline" data-lang="es">Cerca de la playa</span>
+          <span class="lang-inline" data-lang="en">Close to the beach</span>
+        </h3>
+        <p>
+          <span class="lang-inline" data-lang="es">Disfruta más tiempo en la costa y menos tiempo moviéndote. La playa está a minutos del hotel.</span>
+          <span class="lang-inline" data-lang="en">Spend more time by the coast and less time getting there. The beach is just minutes from the hotel.</span>
+        </p>
       </div>
     </article>
 
     <article class="experience-card">
       <img src="Screenshot_20260420_191929_Chrome.jpg" alt="Vida nocturna en Boquerón">
       <div class="experience-copy">
-        <h3>Vida nocturna y ambiente</h3>
-        <p>Restaurantes, música y vida nocturna a pasos del hotel para disfrutar Boquerón de día y de noche.</p>
+        <h3>
+          <span class="lang-inline" data-lang="es">Vida nocturna y ambiente</span>
+          <span class="lang-inline" data-lang="en">Nightlife and local vibe</span>
+        </h3>
+        <p>
+          <span class="lang-inline" data-lang="es">Restaurantes, música y vida nocturna a pasos del hotel para disfrutar Boquerón de día y de noche.</span>
+          <span class="lang-inline" data-lang="en">Restaurants, music, and nightlife just steps from the hotel to enjoy Boquerón day and night.</span>
+        </p>
       </div>
     </article>
 
     <article class="experience-card">
       <img src="Screenshot_20260420_160536_Chrome.jpg" alt="Piscina del hotel">
       <div class="experience-copy">
-        <h3>Descanso y comodidad</h3>
-        <p>Habitaciones cómodas, piscina y una base ideal para escapadas y fines de semana en Cabo Rojo.</p>
+        <h3>
+          <span class="lang-inline" data-lang="es">Descanso y comodidad</span>
+          <span class="lang-inline" data-lang="en">Comfort and relaxation</span>
+        </h3>
+        <p>
+          <span class="lang-inline" data-lang="es">Habitaciones cómodas, piscina y una base ideal para escapadas y fines de semana en Cabo Rojo.</span>
+          <span class="lang-inline" data-lang="en">Comfortable rooms, pool, and an ideal home base for getaways and weekends in Cabo Rojo.</span>
+        </p>
       </div>
     </article>
   </div>
@@ -657,92 +859,185 @@
 
   </section>  <section id="amenidades" style="padding-top:24px;">
     <div class="container">
-      <h2 class="section-title">Amenidades</h2>
-      <p class="section-subtitle">Lo esencial para una estadía cómoda y conveniente.</p>  <div class="amenities">
+      <h2 class="section-title">
+        <span class="lang-inline" data-lang="es">Amenidades</span>
+        <span class="lang-inline" data-lang="en">Amenities</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-inline" data-lang="es">Lo esencial para una estadía cómoda y conveniente.</span>
+        <span class="lang-inline" data-lang="en">Everything you need for a comfortable and convenient stay.</span>
+      </p>  <div class="amenities">
     <article class="amenity">
       <div class="icon">⌂</div>
-      <h3>A pasos del Balneario</h3>
-      <p>Ubicación ideal para disfrutar Boquerón sin complicaciones.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">A pasos del Balneario</span>
+        <span class="lang-inline" data-lang="en">Steps from the beach</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Ubicación ideal para disfrutar Boquerón sin complicaciones.</span>
+        <span class="lang-inline" data-lang="en">An ideal location to enjoy Boquerón with no hassle.</span>
+      </p>
     </article>
 
     <article class="amenity">
       <div class="icon">⌐</div>
-      <h3>Piscina</h3>
-      <p>Relájate después de un día de playa o paseo.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">Piscina</span>
+        <span class="lang-inline" data-lang="en">Pool</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Relájate después de un día de playa o paseo.</span>
+        <span class="lang-inline" data-lang="en">Relax after a day at the beach or exploring the area.</span>
+      </p>
     </article>
 
     <article class="amenity">
       <div class="icon">◉</div>
       <h3>Wi-Fi</h3>
-      <p>Disponible en todo el hotel para una experiencia más cómoda.</p>
+      <p>
+        <span class="lang-inline" data-lang="es">Disponible en todo el hotel para una experiencia más cómoda.</span>
+        <span class="lang-inline" data-lang="en">Available throughout the hotel for a more convenient stay.</span>
+      </p>
     </article>
 
     <article class="amenity">
       <div class="icon">❄</div>
-      <h3>Aire acondicionado</h3>
-      <p>Habitaciones cómodas para el clima del área.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">Aire acondicionado</span>
+        <span class="lang-inline" data-lang="en">Air conditioning</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Habitaciones cómodas para el clima del área.</span>
+        <span class="lang-inline" data-lang="en">Comfortable rooms designed for the local climate.</span>
+      </p>
     </article>
 
     <article class="amenity">
       <div class="icon">🚗</div>
-      <h3>Estacionamiento privado</h3>
-      <p>Amplio estacionamiento dentro de la propiedad para huéspedes.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">Estacionamiento privado</span>
+        <span class="lang-inline" data-lang="en">Private parking</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Amplio estacionamiento dentro de la propiedad para huéspedes.</span>
+        <span class="lang-inline" data-lang="en">Spacious on-site parking available for guests.</span>
+      </p>
     </article>
   </div>
 </div>
 
   </section>  <section>
     <div class="container">
-      <h2 class="section-title">¿Por qué hospedarte en Boquemar?</h2>
-      <p class="section-subtitle">Una de las mejores ubicaciones en Boquerón para disfrutar sin complicaciones.</p>  <div class="benefits">
+      <h2 class="section-title">
+        <span class="lang-inline" data-lang="es">¿Por qué hospedarte en Boquemar?</span>
+        <span class="lang-inline" data-lang="en">Why stay at Boquemar?</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-inline" data-lang="es">Una de las mejores ubicaciones en Boquerón para disfrutar sin complicaciones.</span>
+        <span class="lang-inline" data-lang="en">One of the best locations in Boquerón for a stay with no hassle.</span>
+      </p>  <div class="benefits">
     <article class="benefit">
       <div class="icon">✔</div>
-      <h3>Ubicación céntrica</h3>
-      <p>A pasos de playa, restaurantes y vida nocturna.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">Ubicación céntrica</span>
+        <span class="lang-inline" data-lang="en">Central location</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">A pasos de playa, restaurantes y vida nocturna.</span>
+        <span class="lang-inline" data-lang="en">Steps from the beach, restaurants, and nightlife.</span>
+      </p>
     </article>
 
     <article class="benefit">
       <div class="icon">✔</div>
-      <h3>No necesitas carro</h3>
-      <p>Todo accesible caminando para disfrutar Boquerón.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">No necesitas carro</span>
+        <span class="lang-inline" data-lang="en">No car needed</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Todo accesible caminando para disfrutar Boquerón.</span>
+        <span class="lang-inline" data-lang="en">Everything is within walking distance to enjoy Boquerón.</span>
+      </p>
     </article>
 
     <article class="benefit">
       <div class="icon">✔</div>
-      <h3>Perfecto para escapadas</h3>
-      <p>Ideal para fines de semana, vacaciones y viajes cortos.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">Perfecto para escapadas</span>
+        <span class="lang-inline" data-lang="en">Perfect for getaways</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Ideal para fines de semana, vacaciones y viajes cortos.</span>
+        <span class="lang-inline" data-lang="en">Ideal for weekends, vacations, and short stays.</span>
+      </p>
     </article>
 
     <article class="benefit">
       <div class="icon">✔</div>
-      <h3>Comodidad y ubicación</h3>
-      <p>Una excelente combinación para disfrutar Cabo Rojo.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">Comodidad y ubicación</span>
+        <span class="lang-inline" data-lang="en">Comfort and location</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Una excelente combinación para disfrutar Cabo Rojo.</span>
+        <span class="lang-inline" data-lang="en">A great combination to enjoy Cabo Rojo.</span>
+      </p>
     </article>
   </div>
 </div>
 
   </section>  <section id="habitaciones">
     <div class="container">
-      <h2 class="section-title">Habitaciones</h2>
-      <p class="section-subtitle">Opciones cómodas y funcionales para distintos tipos de estadía.</p>  <div class="rooms">
+      <h2 class="section-title">
+        <span class="lang-inline" data-lang="es">Habitaciones</span>
+        <span class="lang-inline" data-lang="en">Rooms</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-inline" data-lang="es">Opciones cómodas y funcionales para distintos tipos de estadía.</span>
+        <span class="lang-inline" data-lang="en">Comfortable and functional options for different types of stays.</span>
+      </p>  <div class="rooms">
     <article class="room">
       <img src="Screenshot_20260420_160636_Chrome.jpg" alt="Habitación Standard">
       <div class="room-content">
-        <h3>Habitación Standard</h3>
-        <p>Perfecta para descansar después de la playa y disfrutar Boquerón de noche.</p>
+        <h3>
+          <span class="lang-inline" data-lang="es">Habitación Standard</span>
+          <span class="lang-inline" data-lang="en">Standard Room</span>
+        </h3>
+        <p>
+          <span class="lang-inline" data-lang="es">Perfecta para descansar después de la playa y disfrutar Boquerón de noche.</span>
+          <span class="lang-inline" data-lang="en">Perfect for relaxing after the beach and enjoying Boquerón at night.</span>
+        </p>
         <div class="tags">
           <span class="tag">1 full + 1 twin</span>
-          <span class="tag">1er piso</span>
-          <span class="tag">2–3 huéspedes</span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">1er piso</span>
+            <span class="lang-inline" data-lang="en">1st floor</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2–3 huéspedes</span>
+            <span class="lang-inline" data-lang="en">2–3 guests</span>
+          </span>
           <span class="tag">A/C</span>
           <span class="tag">Wi-Fi</span>
         </div>
         <ul class="room-details">
-          <li>Buena opción para parejas o grupos pequeños.</li>
-          <li>Acceso cómodo en el primer nivel.</li>
-          <li>Ideal para escapadas y fines de semana.</li>
+          <li>
+            <span class="lang-inline" data-lang="es">Buena opción para parejas o grupos pequeños.</span>
+            <span class="lang-inline" data-lang="en">A great option for couples or small groups.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Acceso cómodo en el primer nivel.</span>
+            <span class="lang-inline" data-lang="en">Easy access on the first level.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Ideal para escapadas y fines de semana.</span>
+            <span class="lang-inline" data-lang="en">Ideal for getaways and weekends.</span>
+          </li>
         </ul>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">Ver disponibilidad</a>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </article>
 
@@ -750,20 +1045,44 @@
       <img src="Screenshot_20260420_160649_Chrome.jpg" alt="Standard Queen">
       <div class="room-content">
         <h3>Standard Queen</h3>
-        <p>Una opción práctica y cómoda para dos personas.</p>
+        <p>
+          <span class="lang-inline" data-lang="es">Una opción práctica y cómoda para dos personas.</span>
+          <span class="lang-inline" data-lang="en">A practical and comfortable option for two guests.</span>
+        </p>
         <div class="tags">
-          <span class="tag">1 cama queen</span>
-          <span class="tag">1er piso</span>
-          <span class="tag">2 huéspedes</span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">1 cama queen</span>
+            <span class="lang-inline" data-lang="en">1 queen bed</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">1er piso</span>
+            <span class="lang-inline" data-lang="en">1st floor</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2 huéspedes</span>
+            <span class="lang-inline" data-lang="en">2 guests</span>
+          </span>
           <span class="tag">A/C</span>
           <span class="tag">Wi-Fi</span>
         </div>
         <ul class="room-details">
-          <li>Ideal para una estadía sencilla y cómoda.</li>
-          <li>Perfecta para parejas o viajeros solos.</li>
-          <li>Ubicada en el primer nivel del hotel.</li>
+          <li>
+            <span class="lang-inline" data-lang="es">Ideal para una estadía sencilla y cómoda.</span>
+            <span class="lang-inline" data-lang="en">Ideal for a simple and comfortable stay.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Perfecta para parejas o viajeros solos.</span>
+            <span class="lang-inline" data-lang="en">Perfect for couples or solo travelers.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Ubicada en el primer nivel del hotel.</span>
+            <span class="lang-inline" data-lang="en">Located on the first level of the hotel.</span>
+          </li>
         </ul>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">Ver disponibilidad</a>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </article>
 
@@ -771,20 +1090,44 @@
       <img src="Screenshot_20260420_160657_Chrome.jpg" alt="Deluxe">
       <div class="room-content">
         <h3>Deluxe</h3>
-        <p>Más privacidad y comodidad con balcón para una estadía más relajada.</p>
+        <p>
+          <span class="lang-inline" data-lang="es">Más privacidad y comodidad con balcón para una estadía más relajada.</span>
+          <span class="lang-inline" data-lang="en">More privacy and comfort with a balcony for a more relaxing stay.</span>
+        </p>
         <div class="tags">
           <span class="tag">1 full + 1 twin</span>
-          <span class="tag">2do piso</span>
-          <span class="tag">2–3 huéspedes</span>
-          <span class="tag">Balcón</span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2do piso</span>
+            <span class="lang-inline" data-lang="en">2nd floor</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2–3 huéspedes</span>
+            <span class="lang-inline" data-lang="en">2–3 guests</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">Balcón</span>
+            <span class="lang-inline" data-lang="en">Balcony</span>
+          </span>
           <span class="tag">Wi-Fi</span>
         </div>
         <ul class="room-details">
-          <li>Excelente para una escapada más privada.</li>
-          <li>Ubicada en el segundo nivel.</li>
-          <li>Balcón para una mejor experiencia de estadía.</li>
+          <li>
+            <span class="lang-inline" data-lang="es">Excelente para una escapada más privada.</span>
+            <span class="lang-inline" data-lang="en">Excellent for a more private getaway.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Ubicada en el segundo nivel.</span>
+            <span class="lang-inline" data-lang="en">Located on the second level.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Balcón para una mejor experiencia de estadía.</span>
+            <span class="lang-inline" data-lang="en">Balcony for an enhanced stay experience.</span>
+          </li>
         </ul>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">Ver disponibilidad</a>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </article>
 
@@ -792,20 +1135,47 @@
       <img src="Screenshot_20260420_160703_Chrome.jpg" alt="Deluxe Queen">
       <div class="room-content">
         <h3>Deluxe Queen</h3>
-        <p>Perfecta para parejas que buscan una experiencia más cómoda y privada.</p>
+        <p>
+          <span class="lang-inline" data-lang="es">Perfecta para parejas que buscan una experiencia más cómoda y privada.</span>
+          <span class="lang-inline" data-lang="en">Perfect for couples looking for a more comfortable and private experience.</span>
+        </p>
         <div class="tags">
-          <span class="tag">1 cama queen</span>
-          <span class="tag">2do piso</span>
-          <span class="tag">2 huéspedes</span>
-          <span class="tag">Balcón</span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">1 cama queen</span>
+            <span class="lang-inline" data-lang="en">1 queen bed</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2do piso</span>
+            <span class="lang-inline" data-lang="en">2nd floor</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2 huéspedes</span>
+            <span class="lang-inline" data-lang="en">2 guests</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">Balcón</span>
+            <span class="lang-inline" data-lang="en">Balcony</span>
+          </span>
           <span class="tag">Wi-Fi</span>
         </div>
         <ul class="room-details">
-          <li>Diseñada para una estadía más tranquila.</li>
-          <li>Balcón privado.</li>
-          <li>Ideal para escapadas en pareja.</li>
+          <li>
+            <span class="lang-inline" data-lang="es">Diseñada para una estadía más tranquila.</span>
+            <span class="lang-inline" data-lang="en">Designed for a quieter stay.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Balcón privado.</span>
+            <span class="lang-inline" data-lang="en">Private balcony.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Ideal para escapadas en pareja.</span>
+            <span class="lang-inline" data-lang="en">Ideal for couples’ getaways.</span>
+          </li>
         </ul>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">Ver disponibilidad</a>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </article>
 
@@ -813,20 +1183,47 @@
       <img src="Screenshot_20260420_160723_Chrome.jpg" alt="Junior Suite">
       <div class="room-content">
         <h3>Junior Suite</h3>
-        <p>Más amplitud para una estadía más completa y cómoda.</p>
+        <p>
+          <span class="lang-inline" data-lang="es">Más amplitud para una estadía más completa y cómoda.</span>
+          <span class="lang-inline" data-lang="en">More space for a fuller and more comfortable stay.</span>
+        </p>
         <div class="tags">
-          <span class="tag">2 camas queen</span>
-          <span class="tag">2do piso</span>
-          <span class="tag">2–4 huéspedes</span>
-          <span class="tag">Balcón</span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2 camas queen</span>
+            <span class="lang-inline" data-lang="en">2 queen beds</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2do piso</span>
+            <span class="lang-inline" data-lang="en">2nd floor</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2–4 huéspedes</span>
+            <span class="lang-inline" data-lang="en">2–4 guests</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">Balcón</span>
+            <span class="lang-inline" data-lang="en">Balcony</span>
+          </span>
           <span class="tag">Wi-Fi</span>
         </div>
         <ul class="room-details">
-          <li>Espacio adicional para mayor comodidad.</li>
-          <li>Ideal para familias o grupos pequeños.</li>
-          <li>Balcón para una mejor experiencia de estadía.</li>
+          <li>
+            <span class="lang-inline" data-lang="es">Espacio adicional para mayor comodidad.</span>
+            <span class="lang-inline" data-lang="en">Extra space for added comfort.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Ideal para familias o grupos pequeños.</span>
+            <span class="lang-inline" data-lang="en">Ideal for families or small groups.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Balcón para una mejor experiencia de estadía.</span>
+            <span class="lang-inline" data-lang="en">Balcony for an enhanced stay experience.</span>
+          </li>
         </ul>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">Ver disponibilidad</a>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </article>
 
@@ -834,20 +1231,47 @@
       <img src="Screenshot_20260420_160732_Chrome.jpg" alt="Junior Suite King">
       <div class="room-content">
         <h3>Junior Suite King</h3>
-        <p>Nuestra opción destacada para una estadía más privada y cómoda.</p>
+        <p>
+          <span class="lang-inline" data-lang="es">Nuestra opción destacada para una estadía más privada y cómoda.</span>
+          <span class="lang-inline" data-lang="en">Our featured option for a more private and comfortable stay.</span>
+        </p>
         <div class="tags">
-          <span class="tag">1 cama king</span>
-          <span class="tag">3er piso</span>
-          <span class="tag">2 huéspedes</span>
-          <span class="tag">Balcón</span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">1 cama king</span>
+            <span class="lang-inline" data-lang="en">1 king bed</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">3er piso</span>
+            <span class="lang-inline" data-lang="en">3rd floor</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">2 huéspedes</span>
+            <span class="lang-inline" data-lang="en">2 guests</span>
+          </span>
+          <span class="tag">
+            <span class="lang-inline" data-lang="es">Balcón</span>
+            <span class="lang-inline" data-lang="en">Balcony</span>
+          </span>
           <span class="tag">Wi-Fi</span>
         </div>
         <ul class="room-details">
-          <li>Balcón privado.</li>
-          <li>Mayor privacidad al estar en el nivel más alto del hotel.</li>
-          <li>Algunas unidades ofrecen vista parcial a la bahía.</li>
+          <li>
+            <span class="lang-inline" data-lang="es">Balcón privado.</span>
+            <span class="lang-inline" data-lang="en">Private balcony.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Mayor privacidad al estar en el nivel más alto del hotel.</span>
+            <span class="lang-inline" data-lang="en">More privacy by being on the hotel’s highest level.</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Algunas unidades ofrecen vista parcial a la bahía.</span>
+            <span class="lang-inline" data-lang="en">Some units offer partial bay views.</span>
+          </li>
         </ul>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">Ver disponibilidad</a>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-dark">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </article>
   </div>
@@ -856,18 +1280,36 @@
   </section>  <section>
     <div class="container">
       <div class="urgency">
-        <h2>Alta demanda en fines de semana y temporada alta</h2>
-        <p>Recomendamos reservar con anticipación para asegurar disponibilidad.</p>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-primary">Ver disponibilidad</a>
+        <h2>
+          <span class="lang-inline" data-lang="es">Alta demanda en fines de semana y temporada alta</span>
+          <span class="lang-inline" data-lang="en">High demand on weekends and peak season</span>
+        </h2>
+        <p>
+          <span class="lang-inline" data-lang="es">Recomendamos reservar con anticipación para asegurar disponibilidad.</span>
+          <span class="lang-inline" data-lang="en">We recommend booking in advance to secure availability.</span>
+        </p>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-primary">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </div>
   </section>  <section id="hotel">
     <div class="container split">
       <div>
-        <h2 class="section-title">Disfruta el hotel</h2>
-        <p class="section-subtitle">Piscina, áreas cómodas y una estadía pensada para relajarte y disfrutar tu tiempo en Boquerón.</p>
-        <p style="color:var(--muted);margin-bottom:18px;">Parador Boquemar ofrece una experiencia práctica y acogedora para quienes buscan descanso, buena ubicación y cercanía a la playa.</p>
-        <a href="#ubicacion" class="btn btn-dark">Ver ubicación</a>
+        <h2 class="section-title">Hotel</h2>
+        <p class="section-subtitle">
+          <span class="lang-inline" data-lang="es">Piscina, áreas cómodas y una estadía pensada para relajarte y disfrutar tu tiempo en Boquerón.</span>
+          <span class="lang-inline" data-lang="en">Pool, comfortable spaces, and a stay designed to help you relax and enjoy your time in Boquerón.</span>
+        </p>
+        <p style="color:var(--muted);margin-bottom:18px;">
+          <span class="lang-inline" data-lang="es">Parador Boquemar ofrece una experiencia práctica y acogedora para quienes buscan descanso, buena ubicación y cercanía a la playa.</span>
+          <span class="lang-inline" data-lang="en">Parador Boquemar offers a practical and welcoming experience for travelers seeking comfort, a great location, and proximity to the beach.</span>
+        </p>
+        <a href="#ubicacion" class="btn btn-dark">
+          <span class="lang-inline" data-lang="es">Ver ubicación</span>
+          <span class="lang-inline" data-lang="en">View Location</span>
+        </a>
       </div>  <div class="hotel-grid">
     <img src="Screenshot_20260420_160536_Chrome.jpg" alt="Piscina del hotel">
     <img src="Screenshot_20260420_160540_Chrome.jpg" alt="Área de piscina del hotel">
@@ -877,13 +1319,31 @@
   </section>  <section id="ubicacion">
     <div class="container split">
       <div class="location-card">
-        <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem);">Ubicación</h2>
-        <p class="section-subtitle" style="margin-bottom:0;">Una excelente base para disfrutar Boquerón y explorar Cabo Rojo.</p>
+        <h2 class="section-title">
+          <span class="lang-inline" data-lang="es">Ubicación</span>
+          <span class="lang-inline" data-lang="en">Location</span>
+        </h2>
+        <p class="section-subtitle" style="margin-bottom:0;">
+          <span class="lang-inline" data-lang="es">Una excelente base para disfrutar Boquerón y explorar Cabo Rojo.</span>
+          <span class="lang-inline" data-lang="en">An excellent base to enjoy Boquerón and explore Cabo Rojo.</span>
+        </p>
         <ul class="location-list">
-          <li>A pasos del poblado de Boquerón</li>
-          <li>Cerca del Balneario de Boquerón</li>
-          <li>Restaurantes, paseo y ambiente local</li>
-          <li>Buena base para descubrir otras áreas de Cabo Rojo</li>
+          <li>
+            <span class="lang-inline" data-lang="es">A pasos del poblado de Boquerón</span>
+            <span class="lang-inline" data-lang="en">Steps from downtown Boquerón</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Cerca del Balneario de Boquerón</span>
+            <span class="lang-inline" data-lang="en">Near Boquerón Beach</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Restaurantes, paseo y ambiente local</span>
+            <span class="lang-inline" data-lang="en">Restaurants, waterfront, and local atmosphere</span>
+          </li>
+          <li>
+            <span class="lang-inline" data-lang="es">Buena base para descubrir otras áreas de Cabo Rojo</span>
+            <span class="lang-inline" data-lang="en">A great base to explore other areas of Cabo Rojo</span>
+          </li>
         </ul>
       </div>  <div class="location-card" style="padding:0;overflow:hidden;min-height:340px;">
     <img src="Screenshot_20260420_185557_Chrome.jpg" alt="Vista de Boquerón" style="width:100%;height:100%;min-height:340px;object-fit:cover;">
@@ -892,43 +1352,100 @@
 
   </section>  <section id="contacto">
     <div class="container">
-      <h2 class="section-title">Contacto</h2>
-      <p class="section-subtitle">Información útil para ubicarte y comunicarte fácilmente con el hotel.</p>  <div class="contact-grid">
+      <h2 class="section-title">
+        <span class="lang-inline" data-lang="es">Contacto</span>
+        <span class="lang-inline" data-lang="en">Contact</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-inline" data-lang="es">Información útil para ubicarte y comunicarte fácilmente con el hotel.</span>
+        <span class="lang-inline" data-lang="en">Helpful information to find and contact the hotel easily.</span>
+      </p>  <div class="contact-grid">
     <article class="contact-card">
-      <h3>Dirección</h3>
+      <h3>
+        <span class="lang-inline" data-lang="es">Dirección</span>
+        <span class="lang-inline" data-lang="en">Address</span>
+      </h3>
       <p>Carretera 101, Poblado Boquerón, Cabo Rojo, Puerto Rico 00622</p>
     </article>
 
     <article class="contact-card">
-      <h3>Teléfonos</h3>
+      <h3>
+        <span class="lang-inline" data-lang="es">Teléfonos</span>
+        <span class="lang-inline" data-lang="en">Phone Numbers</span>
+      </h3>
       <p>787.851.0591<br>787.851.2158</p>
     </article>
 
     <article class="contact-card">
-      <h3>Servicio</h3>
-      <p>Recepción 24 horas y amenidades para una estadía más cómoda.</p>
+      <h3>
+        <span class="lang-inline" data-lang="es">Servicio</span>
+        <span class="lang-inline" data-lang="en">Service</span>
+      </h3>
+      <p>
+        <span class="lang-inline" data-lang="es">Recepción 24 horas y amenidades para una estadía más cómoda.</span>
+        <span class="lang-inline" data-lang="en">24-hour front desk and amenities for a more comfortable stay.</span>
+      </p>
     </article>
+  </div>
+
+  <div class="contact-call">
+    <a href="tel:17878510591" class="btn btn-dark">
+      <span class="lang-inline" data-lang="es">📞 Llamar para mejores tarifas</span>
+      <span class="lang-inline" data-lang="en">📞 Call for best rates</span>
+    </a>
+    <div style="color:var(--muted);font-weight:600;">
+      <span class="lang-inline" data-lang="es">Para mejores tarifas, llámanos directamente al 787-851-0591</span>
+      <span class="lang-inline" data-lang="en">For the best available rates, call us directly at 787-851-0591</span>
+    </div>
   </div>
 </div>
 
   </section>  <section style="padding-top:12px;">
     <div class="container">
       <div class="cta">
-        <h2>Reserva tu estadía en Boquerón hoy</h2>
-        <p>Reserva directamente y asegura tu espacio en una de las zonas más visitadas de Cabo Rojo.</p>
-        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-light">Ver disponibilidad</a>
+        <h2>
+          <span class="lang-inline" data-lang="es">Reserva tu estadía en Boquerón hoy</span>
+          <span class="lang-inline" data-lang="en">Book your stay in Boquerón today</span>
+        </h2>
+        <p>
+          <span class="lang-inline" data-lang="es">Reserva directamente y asegura tu espacio en una de las zonas más visitadas de Cabo Rojo.</span>
+          <span class="lang-inline" data-lang="en">Book directly and secure your stay in one of the most visited areas of Cabo Rojo.</span>
+        </p>
+        <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-light">
+          <span class="lang-inline" data-lang="es">Ver disponibilidad</span>
+          <span class="lang-inline" data-lang="en">Check Availability</span>
+        </a>
       </div>
     </div>
   </section>
-</main><a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="floating-book">Reservar</a>
-
-<footer>
+</main><a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="floating-book">
+  <span class="lang-inline" data-lang="es">Reservar</span>
+  <span class="lang-inline" data-lang="en">Book</span>
+</a><footer>
   <div class="container footer-wrap">
     <div>
       <strong style="color:var(--navy);">Parador Boquemar</strong><br>
       Carretera 101, Poblado Boquerón, Cabo Rojo, Puerto Rico 00622
     </div>
-    <div>© 2026 Parador Boquemar. Todos los derechos reservados.</div>
+    <div>© 2026 Parador Boquemar. <span class="lang-inline" data-lang="es">Todos los derechos reservados.</span><span class="lang-inline" data-lang="en">All rights reserved.</span></div>
   </div>
-</footer></body>
+</footer><script>
+  (function () {
+    const savedLang = localStorage.getItem('boquemar-lang');
+    const defaultLang = savedLang === 'en' ? 'lang-en' : 'lang-es';
+    document.body.classList.remove('lang-es','lang-en');
+    document.body.classList.add(defaultLang);
+    document.documentElement.lang = defaultLang === 'lang-en' ? 'en' : 'es';
+
+    document.querySelectorAll('[data-set-lang]').forEach(button => {
+      button.addEventListener('click', function () {
+        const lang = this.getAttribute('data-set-lang');
+        document.body.classList.remove('lang-es','lang-en');
+        document.body.classList.add(lang === 'en' ? 'lang-en' : 'lang-es');
+        document.documentElement.lang = lang;
+        localStorage.setItem('boquemar-lang', lang);
+      });
+    });
+  })();
+</script></body>
   </html>

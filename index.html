@@ -22,7 +22,6 @@
       --shadow-strong:0 28px 60px rgba(10,25,45,.16);
       --radius:24px;
       --max:1200px;
-      --reserve-link:url("https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=");
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -258,7 +257,7 @@
 
     .amenities{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(5,1fr);
       gap:18px;
     }
     .amenity{
@@ -533,13 +532,13 @@
     @media (max-width:1180px){
       .rooms{grid-template-columns:repeat(2,1fr)}
       .benefits{grid-template-columns:repeat(2,1fr)}
+      .amenities{grid-template-columns:repeat(2,1fr)}
     }
 
     @media (max-width:980px){
       nav{display:none}
       .hero-grid,
       .experience,
-      .amenities,
       .split,
       .hotel-grid,
       .contact-grid{
@@ -554,7 +553,10 @@
       .brand img{height:50px;max-width:210px}
       .booking-grid{grid-template-columns:1fr}
       .rooms,
-      .benefits{grid-template-columns:1fr}
+      .benefits,
+      .amenities,
+      .experience,
+      .contact-grid{grid-template-columns:1fr}
       .footer-wrap{flex-direction:column;align-items:flex-start}
       .hero h1{font-size:2.35rem}
       .hero p{font-size:1rem}
@@ -591,7 +593,7 @@
           <a href="https://www.reservhotel.com/win/owa/ibe4.main?hotel=475&airport=&adults=&rooms=&child=&infant=0&aDate=&dDate=&source=" target="_blank" class="btn btn-primary">Ver disponibilidad</a>
           <a href="#habitaciones" class="btn btn-secondary">Ver habitaciones</a>
         </div>
-        <div class="hero-trust">⭐ Ubicación favorita de nuestros huéspedes</div>
+        <div class="hero-trust">⭐ Ubicación favorita de nuestros huéspedes · Estacionamiento privado disponible</div>
         <div class="hero-urgency">Alta demanda en fines de semana y temporada alta</div>
       </div>  <aside class="booking-card" id="reservar">
     <h3>Reserva directa</h3>
@@ -638,8 +640,8 @@
     <article class="experience-card">
       <img src="Screenshot_20260420_191929_Chrome.jpg" alt="Vida nocturna en Boquerón">
       <div class="experience-copy">
-        <h3>Ambiente de Boquerón</h3>
-        <p>Restaurantes, música y vida nocturna a pasos del hotel para disfrutar el pueblo de día y de noche.</p>
+        <h3>Vida nocturna y ambiente</h3>
+        <p>Restaurantes, música y vida nocturna a pasos del hotel para disfrutar Boquerón de día y de noche.</p>
       </div>
     </article>
 
@@ -666,19 +668,25 @@
     <article class="amenity">
       <div class="icon">⌐</div>
       <h3>Piscina</h3>
-      <p>Relájate después de un día de playa o de paseo por el área.</p>
+      <p>Relájate después de un día de playa o paseo.</p>
     </article>
 
     <article class="amenity">
       <div class="icon">◉</div>
       <h3>Wi-Fi</h3>
-      <p>Disponible en todo el hotel para una estadía más cómoda.</p>
+      <p>Disponible en todo el hotel para una experiencia más cómoda.</p>
     </article>
 
     <article class="amenity">
       <div class="icon">❄</div>
       <h3>Aire acondicionado</h3>
-      <p>Habitaciones preparadas para el clima del suroeste.</p>
+      <p>Habitaciones cómodas para el clima del área.</p>
+    </article>
+
+    <article class="amenity">
+      <div class="icon">🚗</div>
+      <h3>Estacionamiento privado</h3>
+      <p>Amplio estacionamiento dentro de la propiedad para huéspedes.</p>
     </article>
   </div>
 </div>
@@ -695,14 +703,14 @@
 
     <article class="benefit">
       <div class="icon">✔</div>
-      <h3>Todo cerca</h3>
-      <p>No necesitas manejar para disfrutar Boquerón.</p>
+      <h3>No necesitas carro</h3>
+      <p>Todo accesible caminando para disfrutar Boquerón.</p>
     </article>
 
     <article class="benefit">
       <div class="icon">✔</div>
-      <h3>Ideal para escapadas</h3>
-      <p>Perfecto para fines de semana y vacaciones cortas.</p>
+      <h3>Perfecto para escapadas</h3>
+      <p>Ideal para fines de semana, vacaciones y viajes cortos.</p>
     </article>
 
     <article class="benefit">
@@ -721,7 +729,7 @@
       <img src="Screenshot_20260420_160636_Chrome.jpg" alt="Habitación Standard">
       <div class="room-content">
         <h3>Habitación Standard</h3>
-        <p>Perfecta para descansar después de un día de playa y disfrutar Boquerón de noche.</p>
+        <p>Perfecta para descansar después de la playa y disfrutar Boquerón de noche.</p>
         <div class="tags">
           <span class="tag">1 full + 1 twin</span>
           <span class="tag">1er piso</span>
@@ -923,4 +931,4 @@
     <div>© 2026 Parador Boquemar. Todos los derechos reservados.</div>
   </div>
 </footer></body>
-            </html>
+</html>
